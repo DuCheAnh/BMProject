@@ -4,9 +4,160 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessManagement"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="QLKD" Height="730" Width="1300"
+        Background="LightGray">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="256"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnAddNV">
+                    <materialDesign:PackIcon Kind="AccountAdd" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnQLPhongBan">
+                    <materialDesign:PackIcon Kind="Bank" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnQLNV">
+                    <materialDesign:PackIcon Kind="Account" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnQLGioLam">
+                    <materialDesign:PackIcon Kind="Timetable" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnDGKN">
+                    <materialDesign:PackIcon Kind="CalendarText" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnTKNV">
+                    <materialDesign:PackIcon Kind="BookOpen" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnYeuCauGD">
+                    <materialDesign:PackIcon Kind="Email" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnXemYeuCau">
+                    <materialDesign:PackIcon Kind="Mailbox" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="256"/>
+                    <ColumnDefinition Width="1024"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <StackPanel Background="LightGray" >
+                        <Button x:Name="btnDonHang"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="200"
+                                Height="50"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Margin="20 10"
+                                Click="btnDonHang_Click"
+                >
+                            Đơn Hàng
+                        </Button>
+                        <Button x:Name="bntKhachHang"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="200"
+                                Height="50"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Margin="20 10"
+                                Click="bntKhachHang_Click">
+
+                            Khách Hàng
+                        </Button>
+                        <Button x:Name="btnHoaDon"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="200"
+                                Height="50"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Margin="20 10"
+                                Click="btnHoaDon_Click">
+                            Hóa Đơn
+                        </Button>
+                        <Button x:Name="btnHangHoa"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="200"
+                                Height="50"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                                Margin="20 20"
+                                Click="btnHangHoa_Click">
+                            Hàng Hóa
+                        </Button>
+                        <Button x:Name="btnCaNhan"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="200"
+                                Height="50"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="20 150 20 20"
+                                Click="btnCaNhan_Click"
+                                >
+                            Cá Nhân
+                        </Button>
+                        <Button x:Name="btnDangXuat"
+                                Style="{StaticResource MaterialDesignRaisedButton}"
+                                Width="200"
+                                Height="50"
+                                ToolTip="Resource name: MaterialDesignRaisedButton"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="20 20"
+                               Click="btnDangXuat_Click">
+                            Đăng Xuất
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid x:Name="spMain" Width="1000" Height="600" Background="WhiteSmoke" HorizontalAlignment="Stretch" VerticalAlignment="Top"></Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

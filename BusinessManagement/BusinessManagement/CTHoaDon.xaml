@@ -1,0 +1,59 @@
+﻿<Window x:Class="BusinessManagement.CTHoaDon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        FontSize="24"
+        FontFamily="Tahoma"
+        Title="Chi Tiết Hóa Đơn" Height="460" Width="520">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"></ColumnDefinition>
+            <ColumnDefinition Width="340"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Mã HĐ :"
+                   Margin="20 20 20 10"></Label>
+            <Label Content="Mã ĐH :"
+                   Margin="20 10">
+            </Label>
+            <Label Content="Ngày lập :"
+                   Margin="20 10">
+            </Label>
+            <Label Content="Ngày xuất :"
+                   Margin="20 10">
+            </Label>
+            <Label Content="Nhân Viên :"
+                   Margin="20 10">
+            </Label>
+            <Label Content="Mã NV :"
+                   Margin="20 10">
+            </Label>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label x:Name="lbMaHD"
+                       Content="Mã HD"
+                       Margin="0 20 20 10">
+            </Label>
+            <Label x:Name="lbMaDH"
+                       Content="Mã DH"
+                       Margin="0 10">
+            </Label>
+            <Label x:Name="lbNgayLap"
+                       Content="20/10/2020"
+                       Margin="0 10"></Label>
+            <Label x:Name="lbNgayXuat"
+                       Content="20/10/2020"
+                       Margin="0 10"></Label>
+            <Label x:Name="lbTenNV"
+                       Content="nguyen van b"
+                       Margin="0 10"></Label>
+            <Label x:Name="lbMaNV"
+                       Content="nv12380"
+                       Margin="0 10"></Label>
+
+        </StackPanel>
+    </Grid>
+</Window>
