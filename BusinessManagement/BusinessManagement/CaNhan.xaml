@@ -33,8 +33,6 @@
                             <Label Content="Địa Chỉ"  Margin="20 20 0 0"/>
                             <Label Content="Trình độ"  Margin="20 20 0 0"/>
                         </StackPanel>
-
-
                     </Grid>
                     <Grid Grid.Column="1">
                         <StackPanel>

@@ -45,6 +45,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,6 +65,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LichDGKN.xaml.cs">
+      <DependentUpon>LichDGKN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBan.xaml.cs">
+      <DependentUpon>PhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QLNgayGio.xaml.cs">
+      <DependentUpon>QLNgayGio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemNVMoi.xaml.cs">
+      <DependentUpon>ThemNVMoi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe.xaml.cs">
+      <DependentUpon>ThongKe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThongQuaYC.xaml.cs">
+      <DependentUpon>ThongQuaYC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YeuCauGD.xaml.cs">
+      <DependentUpon>YeuCauGD.xaml</DependentUpon>
+    </Compile>
     <Page Include="CaNhan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LichDGKN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,6 +158,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLNgayGio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemNVMoi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThongKe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThongQuaYC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YeuCauGD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="BusinessManagement.PhongBan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BusinessManagement"
+             mc:Ignorable="d" 
+             FontFamily="Tahoma"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="20" Margin="10,10,0,10" HorizontalAlignment="Left" Width="250">Phòng kinh doanh</TextBlock>
+        <TextBlock FontSize="20" Margin="0,10,10,10" HorizontalAlignment="Right" Width="150">Số nhân viên:</TextBlock>
+        <Grid Grid.Row="1" Grid.RowSpan="1">
+            <ScrollViewer Margin="50,10,50,10">
+                <ListView TextElement.FontSize="16" >
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Width="100"
+                                            Header="STT">
+                            </GridViewColumn>
+                            <GridViewColumn Width="200"
+                                            Header="Mã Nhân Viên">
+                            </GridViewColumn>
+                            <GridViewColumn Width="400"
+                                            Header="Họ Tên">
+                            </GridViewColumn>
+                            <GridViewColumn Width="200"
+                                            Header="Chi tiết">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnView" Click="btnView_Click"></Button>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Margin="10"
+                    Grid.Column="0"
+                    Content="Quản lý ngày, giờ làm"></Button>
+            <Button Margin="10" 
+                    Grid.Column="1"
+                    Content="Thống kê ngày, giờ làm"
+                    Click="btnThongKe_Click"></Button>
+            <Button Margin="10" 
+                    Grid.Column="2"
+                    Content="Lên lịch đánh giá kĩ năng"></Button>
+        </Grid>
+    </Grid>
+</UserControl>

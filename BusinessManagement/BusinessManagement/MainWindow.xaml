@@ -36,7 +36,8 @@
                 <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnQLPhongBan">
+                        x:Name="btnQLPhongBan"
+                        Click="btnQLPhongBan_Click">
                     <materialDesign:PackIcon Kind="Bank" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
@@ -66,7 +67,8 @@
                 <Button Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnYeuCauGD">
+                        x:Name="btnYeuCauGD"
+                        Click="btnYeuCauGD_Click">
                     <materialDesign:PackIcon Kind="Email" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"

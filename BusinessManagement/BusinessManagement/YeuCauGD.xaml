@@ -1,0 +1,34 @@
+﻿<Window x:Class="BusinessManagement.YeuCauGD"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BusinessManagement"
+             mc:Ignorable="d" 
+             FontFamily="Tahoma"
+             Height="450" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="290*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Lý Do:" Margin="10" VerticalContentAlignment="Center" 
+                   FontSize="20" Height="50" Width="140"/>
+            <ComboBox Margin="10" FontSize="20" Width="400" Height="50" VerticalContentAlignment="Center" >
+                <ComboBoxItem IsSelected="True" Content="Yêu cầu cập nhật giá cả hàng hóa"/>
+                <ComboBoxItem Content="Yêu cầu thêm nhà cung cấp"/>
+                <ComboBoxItem Content="Yêu cầu thăng chức nhân viên"/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.RowSpan="2">
+            <Label Content="Chi tiết lý do:" Margin="10,10,10,290"
+               FontSize="20" Width="140"/>
+            <TextBox Margin="0,10,0,70" Width="400" FontSize="20"/>
+        </StackPanel>
+        <Button Grid.Row="2" Margin="450 10 10 10" 
+                Content="Yêu Cầu"
+                Click="btnYeuCau_Click"></Button>
+    </Grid>
+</Window>

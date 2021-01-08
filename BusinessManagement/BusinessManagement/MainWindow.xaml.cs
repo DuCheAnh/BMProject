@@ -42,7 +42,9 @@ namespace BusinessManagement
         public MainWindow()
         {
             InitializeComponent();
+            //NhanVienLogin();
             QuanLyLogin();
+            //GiamDocLogin();
         }
 
         private void btnDonHang_Click(object sender, RoutedEventArgs e)
@@ -84,5 +86,17 @@ namespace BusinessManagement
         {
 
         }
+
+        private void btnYeuCauGD_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void btnQLPhongBan_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            ThongQuaYC phongban = new ThongQuaYC();
+            spMain.Children.Add(phongban);
+         }
     }
 }
