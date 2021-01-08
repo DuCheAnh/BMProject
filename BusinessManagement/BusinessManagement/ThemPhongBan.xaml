@@ -1,0 +1,46 @@
+﻿<Window x:Class="BusinessManagement.ThemPhongBan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        Title="Thêm Phòng Ban" Height="400" Width="400">
+    <Grid>
+        <Canvas>
+            <TextBox x:Name="tbTenPB" Width="350" Height="60"
+                     Canvas.Left="30" Canvas.Top="30"
+                     materialDesign:HintAssist.Hint="Tên Phòng Ban"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="25" FontWeight="Bold" 
+                     />
+            <TextBox x:Name="tbMaPB" Width="200" Height="50"
+                     Canvas.Left="30" Canvas.Top="100"
+                     materialDesign:HintAssist.Hint="Mã Phòng Ban"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     />
+            <TextBox x:Name="tbSDTPB" Width="280" Height="50"
+                     Canvas.Left="30" Canvas.Top="160"
+                     materialDesign:HintAssist.Hint="Số Điện Thoại"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     PreviewKeyDown="tbSDTPB_PreviewKeyDown"
+                     PreviewTextInput="tbSDTPB_PreviewTextInput"
+                     />
+            <Button x:Name="btnThemPB" Width="160" Height="50"
+                    Canvas.Bottom="20" Canvas.Right="20"
+                    Content="Thêm Phòng Ban" FontWeight="Bold" FontSize="15" 
+                    IsEnabled="False"
+                    Click="btnThemPB_Click">
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>

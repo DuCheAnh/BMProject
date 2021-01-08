@@ -45,6 +45,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,7 +65,41 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CapNhatLuong.xaml.cs">
+      <DependentUpon>CapNhatLuong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CTNhanVien.xaml.cs">
+      <DependentUpon>CTNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DanhGiaKyNang.xaml.cs">
+      <DependentUpon>DanhGiaKyNang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoiChucVu.xaml.cs">
+      <DependentUpon>DoiChucVu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.xaml.cs">
+      <DependentUpon>NhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemHopDong.xaml.cs">
+      <DependentUpon>ThemHopDong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemMatHang.xaml.cs">
+      <DependentUpon>ThemMatHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemNCC.xaml.cs">
+      <DependentUpon>ThemNCC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemPhongBan.xaml.cs">
+      <DependentUpon>ThemPhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XetKyNang.xaml.cs">
+      <DependentUpon>XetKyNang.xaml</DependentUpon>
+    </Compile>
     <Page Include="CaNhan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapNhatLuong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,7 +115,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CTNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DanhGiaKyNang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DoiChucVu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +186,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemHopDong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemMatHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemNCC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemPhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XetKyNang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

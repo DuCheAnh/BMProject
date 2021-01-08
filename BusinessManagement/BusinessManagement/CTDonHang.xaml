@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:BusinessManagement"
         FontSize="24"
         FontFamily="Tahoma"
+        ResizeMode="NoResize"
         Title="Chi Tiết Đơn Hàng" Height="680" Width="880">
     <Grid>
         <ScrollViewer>

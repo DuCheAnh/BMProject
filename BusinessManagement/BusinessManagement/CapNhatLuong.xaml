@@ -1,0 +1,41 @@
+﻿<Window x:Class="BusinessManagement.CapNhatLuong"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        ResizeMode="NoResize"
+        Title="Cập nhật lương" Height="170" Width="500">
+    <Grid>
+        <Canvas>
+            <ComboBox Canvas.Left="20" Canvas.Top="20" IsEnabled="False"
+                      materialDesign:HintAssist.Hint="Loại Lương"
+                      FontSize="18" FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                      Width="180">
+                <ComboBoxItem Content="Thưởng tháng mức 1"/>
+                <ComboBoxItem Content="Thưởng tháng mức 2"/>
+                <ComboBoxItem Content="Thưởng tháng mức 3"/>
+                <ComboBoxItem Content="Thưởng chức vụ quản lý"/>
+                <ComboBoxItem Content="Thưởng chức vụ nhân viên"/>
+                <ComboBoxItem Content="Hợp đồng thử việc"/>
+                <ComboBoxItem Content="Hợp đồng làm việc 1 năm"/>
+                <ComboBoxItem Content="Hợp đồng làm việc 3 năm"/>
+                <ComboBoxItem Content="Hợp đồng làm việc 5 năm"/>
+            </ComboBox>
+            <TextBox x:Name="tbDVT" Width="180" Height="50"
+                     Canvas.Left="220" Canvas.Top="18"
+                     materialDesign:HintAssist.Hint="Mức Lương"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     />
+            <Button Canvas.Top="90" Canvas.Right="10" Width="120">
+                Đồng ý
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>

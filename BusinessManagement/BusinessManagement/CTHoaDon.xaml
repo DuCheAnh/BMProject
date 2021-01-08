@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         FontSize="24"
         FontFamily="Tahoma"
+        ResizeMode="NoResize"
         Title="Chi Tiết Hóa Đơn" Height="460" Width="520">
     <Grid>
         <Grid.ColumnDefinitions>

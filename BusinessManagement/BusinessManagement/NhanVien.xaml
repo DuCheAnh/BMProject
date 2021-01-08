@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="BusinessManagement.HangHoa"
+﻿<UserControl x:Class="BusinessManagement.NhanVien"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BusinessManagement"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              FontFamily="Tahoma"
              FontSize="20"
              d:DesignHeight="600" d:DesignWidth="1000">
@@ -61,24 +61,16 @@
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="180"
-                                            Header="Mã Hàng">
+                                            Header="Mã Nhân Viên">
                             </GridViewColumn>
-                            <GridViewColumn Width="120"
-                                            Header="Đơn vị">
-                            </GridViewColumn>
-                            <GridViewColumn Width="150"
-                                            Header="Nhóm Hàng">
+                            <GridViewColumn Width="320"
+                                            Header="Tên Nhân Viên">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Nhà Cung Cấp">
-
+                                            Header="SĐT">
                             </GridViewColumn>
-                            <GridViewColumn Width="150"
-                                            Header="Giá Tiền">
-
-                            </GridViewColumn>
-                            <GridViewColumn Width="200"
-                                            Header="Tồn Kho">
+                            <GridViewColumn Width="180"
+                                            Header="Địa Chỉ">
 
                             </GridViewColumn>
                         </GridView>

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessManagement"
         mc:Ignorable="d"
-       FontSize="24"
+        FontSize="24"
+        ResizeMode="NoResize"
         FontFamily="Tahoma"
         Title="Chi Tiết Khách Hàng" Height="680" Width="520">
     <Grid>
@@ -18,10 +19,6 @@
                 </Label>
                 <Label x:Name="lbMaKH" 
                        Content="makh" 
-                       Margin="20 10 10 5" >
-                </Label>
-                <Label x:Name="lbNgaySinh" 
-                       Content="ngay/thang/nam" 
                        Margin="20 10 10 5" >
                 </Label>
                 <Label x:Name="lbSDT" 

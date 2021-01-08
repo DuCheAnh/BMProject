@@ -1,0 +1,63 @@
+﻿<Window x:Class="BusinessManagement.ThemMatHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        FontFamily="Tahoma"
+        ResizeMode="NoResize"
+        Title="Thêm Mặt Hàng" Height="460" Width="400">
+    <Grid>
+        <Canvas>
+            <TextBox x:Name="tbTenMH" Width="350" Height="60"
+                     Canvas.Left="20" Canvas.Top="20"
+                     materialDesign:HintAssist.Hint="Tên Mặt Hàng"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="25" FontWeight="Bold"
+                     />
+            <ComboBox Canvas.Left="20" Canvas.Top="100" 
+                      materialDesign:HintAssist.Hint="Nhà Cung Cấp"
+                      FontSize="18" FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
+            </ComboBox>
+            <TextBox x:Name="tbDVT" Width="200" Height="50"
+                     Canvas.Left="20" Canvas.Top="160"
+                     materialDesign:HintAssist.Hint="Đơn Vị Tính"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     />
+            <ComboBox Canvas.Left="20" Canvas.Top="230"
+                      materialDesign:HintAssist.Hint="Nhóm Mặt Hàng"
+                      FontSize="18" FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
+                <ComboBoxItem Content="CPU"/>
+                <ComboBoxItem Content="Mainboard"/>
+                <ComboBoxItem Content="VGA"/>
+                <ComboBoxItem Content="RAM"/>
+                <ComboBoxItem Content="SSD"/>
+                <ComboBoxItem Content="Laptop"/>
+                <ComboBoxItem Content="Nguyên bộ"/>
+            </ComboBox>
+            <TextBox x:Name="tbDonGia" Width="200" Height="50"
+                     Canvas.Left="20" Canvas.Top="280"
+                     materialDesign:HintAssist.Hint="Đơn giá"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     />
+            <Button x:Name="btnThemMH" Width="180" Height="50"
+                    Canvas.Bottom="20" Canvas.Right="20"
+                    Content="Thêm Mặt Hàng" FontWeight="Bold" FontSize="15" 
+                    IsEnabled="False"
+                    >
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>
