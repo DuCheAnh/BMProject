@@ -53,6 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ChucVu.cs" />
+    <Compile Include="DAL_CTCV.cs" />
+    <Compile Include="DAL_CTGiaCa.cs" />
+    <Compile Include="DAL_CTLT.cs" />
+    <Compile Include="DAL_CTT.cs" />
+    <Compile Include="DAL_DonHang.cs" />
+    <Compile Include="DAL_DSKyNang.cs" />
+    <Compile Include="DAL_HangHoa.cs" />
+    <Compile Include="DAL_HoaDon.cs" />
+    <Compile Include="DAL_HopDong.cs" />
+    <Compile Include="DAL_KhachHang.cs" />
+    <Compile Include="DAL_KyKet.cs" />
+    <Compile Include="DAL_MucThuong.cs" />
+    <Compile Include="DAL_NhaCC.cs" />
+    <Compile Include="DAL_NhanVien.cs" />
+    <Compile Include="DAL_PB.cs" />
+    <Compile Include="DAL_User.cs" />
     <Compile Include="DB_connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

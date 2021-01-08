@@ -1,6 +1,6 @@
 ﻿namespace DTO
 {
-    class Chucvu
+    public class Chucvu
     {
         public string ChucvuID { get; set; }
         public string tenchucvu { get; set; }
