@@ -66,19 +66,15 @@
                             <GridViewColumn Width="120"
                                             Header="Đơn vị">
                             </GridViewColumn>
-                            <GridViewColumn Width="150"
+                            <GridViewColumn Width="180"
                                             Header="Nhóm Hàng">
                             </GridViewColumn>
-                            <GridViewColumn Width="180"
+                            <GridViewColumn Width="210"
                                             Header="Nhà Cung Cấp">
 
                             </GridViewColumn>
-                            <GridViewColumn Width="150"
+                            <GridViewColumn Width="160"
                                             Header="Giá Tiền">
-
-                            </GridViewColumn>
-                            <GridViewColumn Width="200"
-                                            Header="Tồn Kho">
 
                             </GridViewColumn>
                         </GridView>

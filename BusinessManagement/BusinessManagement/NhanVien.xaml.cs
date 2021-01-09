@@ -24,5 +24,11 @@ namespace BusinessManagement
         {
             InitializeComponent();
         }
+
+        private void bntThemNV_Click(object sender, RoutedEventArgs e)
+        {
+            ThemNVMoi them = new ThemNVMoi();
+            them.Show();
+        }
     }
 }

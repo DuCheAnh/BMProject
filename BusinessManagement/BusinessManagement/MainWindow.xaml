@@ -30,37 +30,43 @@
                 <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnAddNV">
+                        x:Name="btnAddNV"
+                        Click="btnAddNV_Click">
                     <materialDesign:PackIcon Kind="AccountAdd" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnQLPhongBan">
+                        x:Name="btnQLPhongBan"
+                        Click="btnQLPhongBan_Click">
                     <materialDesign:PackIcon Kind="Bank" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnQLNV">
+                        x:Name="btnQLNV"
+                        Click="btnQLNV_Click">
                     <materialDesign:PackIcon Kind="Account" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnQLGioLam">
+                        x:Name="btnQLGioLam"
+                        Click="btnQLGioLam_Click">
                     <materialDesign:PackIcon Kind="Timetable" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnDGKN">
+                        x:Name="btnDGKN"
+                        Click="btnDGKN_Click">
                     <materialDesign:PackIcon Kind="CalendarText" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
-                        x:Name="btnTKNV">
+                        x:Name="btnTKNV"
+                        Click="btnTKNV_Click">
                     <materialDesign:PackIcon Kind="BookOpen" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Button>
                 <Button Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Background="LightGray"
@@ -159,5 +165,23 @@
                 </Grid>
             </Grid>
         </Grid>
+        <materialDesign:PopupBox HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Style="{StaticResource MaterialDesignMultiFloatingActionAccentPopupBox}"
+                                 Canvas.Bottom="20" Canvas.Left="10"
+                                 Margin="35" Grid.Row="1"
+                                 PlacementMode="TopAndAlignCentres"
+                                 x:Name="pbtnManage">
+            <StackPanel>
+                <Button  x:Name="btnThemMatHang" Click="btnThemMatHang_Click">
+                    <materialDesign:PackIcon Kind="Dropbox" Height="20" Width="20" />
+                </Button>
+                <Button  x:Name="btnThemHopDong" Click="btnThemHopDong_Click">
+                    <materialDesign:PackIcon Kind="ContentPaste"/>
+                </Button>
+                <Button Name="btnThemNhaCC" Click="btnThemNhaCC_Click">
+                    <materialDesign:PackIcon Kind="TruckDelivery" />
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
     </Grid>
 </Window>

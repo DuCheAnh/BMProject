@@ -84,5 +84,63 @@ namespace BusinessManagement
         {
 
         }
+
+        private void btnAddNV_Click(object sender, RoutedEventArgs e)
+        {
+            ThemNVMoi them = new ThemNVMoi();
+            them.Show();
+        }
+
+        private void btnQLPhongBan_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            PhongBan pb = new PhongBan();
+            spMain.Children.Add(pb);
+        }
+
+        private void btnQLNV_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            NhanVien nv = new NhanVien();
+            spMain.Children.Add(nv);
+        }
+
+        private void btnQLGioLam_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            QLNgayGio pb = new QLNgayGio();
+            spMain.Children.Add(pb);
+        }
+
+        private void btnDGKN_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            LichDGKN pb = new LichDGKN();
+            spMain.Children.Add(pb);
+        }
+
+        private void btnTKNV_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            ThongKe pb = new ThongKe();
+            spMain.Children.Add(pb);
+        }
+
+        private void btnThemMatHang_Click(object sender, RoutedEventArgs e)
+        {
+            ThemMatHang them = new ThemMatHang();
+            them.Show();
+        }
+
+        private void btnThemHopDong_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnThemNhaCC_Click(object sender, RoutedEventArgs e)
+        {
+            ThemNCC them = new ThemNCC();
+            them.Show();
+        }
     }
 }

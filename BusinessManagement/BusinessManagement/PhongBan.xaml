@@ -48,16 +48,6 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Button Margin="10"
-                    Grid.Column="0"
-                    Content="Quản lý ngày, giờ làm"></Button>
-            <Button Margin="10" 
-                    Grid.Column="1"
-                    Content="Thống kê ngày, giờ làm"
-                    Click="btnThongKe_Click"></Button>
-            <Button Margin="10" 
-                    Grid.Column="2"
-                    Content="Lên lịch đánh giá kĩ năng"></Button>
         </Grid>
     </Grid>
 </UserControl>

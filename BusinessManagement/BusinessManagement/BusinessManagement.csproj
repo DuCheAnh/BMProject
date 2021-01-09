@@ -104,6 +104,9 @@
     <Compile Include="ThemHopDong.xaml.cs">
       <DependentUpon>ThemHopDong.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ThemKhachHang.xaml.cs">
+      <DependentUpon>ThemKhachHang.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ThemMatHang.xaml.cs">
       <DependentUpon>ThemMatHang.xaml</DependentUpon>
     </Compile>
@@ -236,6 +239,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ThemHopDong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemKhachHang.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BusinessManagement
 {
     /// <summary>
-    /// Interaction logic for KhachHang.xaml
+    /// Interaction logic for ThemKhachHang.xaml
     /// </summary>
-    public partial class KhachHang : UserControl
+    public partial class ThemKhachHang : Window
     {
-        public KhachHang()
+        public ThemKhachHang()
         {
             InitializeComponent();
-        }
-
-        private void bntThemKH_Click(object sender, RoutedEventArgs e)
-        {
-            ThemKhachHang them = new ThemKhachHang();
-            them.Show();
         }
     }
 }

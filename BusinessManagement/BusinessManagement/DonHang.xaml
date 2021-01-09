@@ -54,6 +54,7 @@
                         />
                 </Grid>
             </materialDesign:ColorZone>
+            <Button Canvas.Left="660" Canvas.Top="20" Height="40" Width="180" x:Name="bntThemKH" Content="Thêm đơn hàng"></Button>
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
