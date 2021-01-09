@@ -6,8 +6,8 @@ namespace DAL
     {
         public static IFirebaseConfig config = new FirebaseConfig
         {
-            AuthSecret = "o0eMR0noTxqK87VmrKy0nSPtfI6YgdAb7rEeFCbe",
-            BasePath = "https://businessmanagementuit-default-rtdb.firebaseio.com/"
+            AuthSecret = "Z5SMsT1X1xcb3du5OrKnA2YaGYzkUuQsgq55riWO",
+            BasePath = "https://bmproject-e9619-default-rtdb.firebaseio.com/"
         };
         public static IFirebaseClient client = new FireSharp.FirebaseClient(config);
     }
