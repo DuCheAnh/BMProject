@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="BusinessManagement.ThongQuaYC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BusinessManagement"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Label VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   FontSize="20">
+                Thông qua Yêu cầu từ quản lý
+            </Label>
+        </Grid>
+        <Grid Grid.Row="1" Grid.RowSpan="1">
+            <ScrollViewer Margin="10">
+                <ListView TextElement.FontSize="16" >
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Width="100"
+                                            Header="STT">
+                            </GridViewColumn>
+                            <GridViewColumn Width="200"
+                                            Header="Từ">
+                            </GridViewColumn>
+                            <GridViewColumn Width="200"
+                                            Header="Lý Do">
+                            </GridViewColumn>
+                            <GridViewColumn Width="350"
+                                            Header="Chi tiết">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Expander Header="{Binding SomeText}">
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding SomeText}" />
+                                        </Expander>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="200"
+                                            Header="Duyệt">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox></CheckBox>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Margin="10" 
+                    Grid.Column="2"
+                    Content="Xác nhận"></Button>
+        </Grid>
+    </Grid>
+</UserControl>
