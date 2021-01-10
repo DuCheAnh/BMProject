@@ -1,4 +1,4 @@
-﻿    namespace DTO
+﻿namespace DTO
 {
     public class Nhanvien
     {
@@ -11,6 +11,11 @@
         public string CTThuongID { get; set; }
         public string CTKyketID { get; set; }
         public string DSKinangID { get; set; }
+        public string ngaysinh { get; set; }
+        public string gioitinh { get; set; }
+        public string noisinh { get; set; }
+        public string diachi { get; set; }
+        public string trinhdo { get; set; }
         public Nhanvien()
         {
         }
@@ -26,13 +31,18 @@
         /// <param name="nCTThuongID"></param>
         /// <param name="nCTKyketID"></param>
         /// <param name="nDSKinangID"></param>
-        public Nhanvien(string nNVID, string nType, string nTennv, string nEmail, string nCTChucvuID, string nCTLamthemID,
-            string nCTThuongID, string nCTKyketID, string nDSKinangID)
+        public Nhanvien(string nNVID, string nType, string nTennv, string nEmail, string nNgaysinh, string nGioitinh,
+            string nNoisinh, string nDiachi, string nTrinhdo, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
         {
             NVID = nNVID;
             type = nType;
             tennv = nTennv;
             email = nEmail;
+            ngaysinh = nNgaysinh;
+            gioitinh = nGioitinh;
+            noisinh = nNoisinh;
+            diachi = nDiachi;
+            trinhdo = nTrinhdo;
             CTChucvuID = nCTChucvuID;
             CTLamthemID = nCTLamthemID;
             CTThuongID = nCTThuongID;
