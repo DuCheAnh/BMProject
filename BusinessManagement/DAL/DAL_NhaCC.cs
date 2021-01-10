@@ -1,11 +1,14 @@
 ﻿using DTO;
 using FireSharp.Response;
+using FireSharp.Interfaces;
 using System.Collections.Generic;
+using System;
 namespace DAL
 {
     public class DAL_NhaCC
     {
         string db_path = "NhaCC/";
+        public IFirebaseClient client;
         public bool add_NhaCC(string nNhaccID, string nTennhacc, string nSdt)
         {
             var data = new Nhacc(nNhaccID, nTennhacc, nSdt);

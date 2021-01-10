@@ -28,7 +28,7 @@
             <Button x:Name="btnThemNCC" Width="180" Height="50"
                     Canvas.Bottom="20" Canvas.Right="20"
                     Content="Thêm Nhà Cung Cấp" FontWeight="Bold" FontSize="15" 
-                    IsEnabled="False"
+                    IsEnabled="True" Click="btnThemNCC_Click"
                     >
             </Button>
         </Canvas>

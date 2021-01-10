@@ -27,11 +27,11 @@ namespace BusinessManagement
         {
             lbTenNV.Content = BUS.CurrentUser.nhanvien.tennv;
             lbMaNV.Content = BUS.CurrentUser.nhanvien.NVID;
-            lbNgaySinh.Content = BUS.CurrentUser.nhanvien.email;
-            lbGioiTinh.Content = BUS.CurrentUser.nhanvien.CTThuongID;
-            lbNoiSinh.Content = BUS.CurrentUser.nhanvien.type;
-            lbDiaChi.Content = BUS.CurrentUser.nhanvien.CTLamthemID;
-            lbTrinhDo.Content = BUS.CurrentUser.nhanvien.CTChucvuID;
+            lbNgaySinh.Content = BUS.CurrentUser.nhanvien.ngaysinh;
+            lbGioiTinh.Content = BUS.CurrentUser.nhanvien.gioitinh;
+            lbNoiSinh.Content = BUS.CurrentUser.nhanvien.noisinh;
+            lbDiaChi.Content = BUS.CurrentUser.nhanvien.diachi;
+            lbTrinhDo.Content = BUS.CurrentUser.nhanvien.trinhdo;
             lbPhongBan.Content = BUS.CurrentUser.user.PBID;
             
         }

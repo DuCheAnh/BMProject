@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BUS;
 namespace BusinessManagement
 {
     /// <summary>
@@ -19,9 +19,16 @@ namespace BusinessManagement
     /// </summary>
     public partial class ThemKhachHang : Window
     {
+        BUS_USER user_bus = new BUS_USER();
         public ThemKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void btnThemKH_Click(object sender, RoutedEventArgs e)
+        {
+            user_bus.add_new_KH(HoTen.Text, SDT.Text, DiaChi.Text);
+            MessageBox.Show("Thêm thành công");
         }
     }
 }

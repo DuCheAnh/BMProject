@@ -6,10 +6,10 @@ namespace DAL
     public class DAL_NhanVien
     {
         string db_path = "NhanVien/";
-        public bool add_NV(string nNVID, string nType, string nTennv, string nEmail, string nCTChucvuID, string nCTLamthemID,
-            string nCTThuongID, string nCTKyketID, string nDSKinangID)
+        public bool add_NV(string nNVID, string nType, string nTennv, string nEmail, string nNgaysinh, string nGioitinh,
+            string nNoisinh, string nDiachi, string nTrinhdo, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
         {
-            var data = new Nhanvien(nNVID, nType, nTennv, nEmail, nCTChucvuID, nCTLamthemID,
+            var data = new Nhanvien(nNVID, nType, nTennv, nEmail, nNgaysinh, nGioitinh, nNoisinh, nDiachi, nTrinhdo, nCTChucvuID, nCTLamthemID,
                                     nCTThuongID, nCTKyketID, nDSKinangID);
             SetResponse rep = DB_connect.client.Set(db_path + nNVID, data);
             Nhanvien result = rep.ResultAs<Nhanvien>();
@@ -17,10 +17,10 @@ namespace DAL
             else return false;
         }
 
-        public bool update_NV(string nNVID, string nType, string nTennv, string nEmail, string nCTChucvuID, string nCTLamthemID,
-            string nCTThuongID, string nCTKyketID, string nDSKinangID)
+        public bool update_NV(string nNVID, string nType, string nTennv, string nEmail, string nNgaysinh, string nGioitinh,
+            string nNoisinh, string nDiachi, string nTrinhdo, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
         {
-            var data = new Nhanvien(nNVID, nType, nTennv, nEmail, nCTChucvuID, nCTLamthemID,
+            var data = new Nhanvien(nNVID, nType, nTennv, nEmail, nNgaysinh, nGioitinh, nNoisinh, nDiachi, nTrinhdo, nCTChucvuID, nCTLamthemID,
                                     nCTThuongID, nCTKyketID, nDSKinangID);
             FirebaseResponse rep = DB_connect.client.Update(db_path + nNVID, data);
             Nhanvien result = rep.ResultAs<Nhanvien>();

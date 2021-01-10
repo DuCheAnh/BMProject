@@ -27,7 +27,7 @@ namespace BusinessManagement
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            BUS.CurrentUser.user = user_bus.get_user_from_id("001");
+            BUS.CurrentUser.user = user_bus.get_user_from_id("637459267331457059");
             BUS.CurrentUser.nhanvien = user_bus.get_nv_from_id(BUS.CurrentUser.user.NVID);
         }
 

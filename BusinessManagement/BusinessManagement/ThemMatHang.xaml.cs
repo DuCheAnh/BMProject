@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using BUS;
+using DTO;
+
 
 namespace BusinessManagement
 {
@@ -19,13 +13,21 @@ namespace BusinessManagement
     /// </summary>
     public partial class ThemMatHang : Window
     {
+        BUS_USER user_bus = new BUS_USER();
         public ThemMatHang()
         {
             InitializeComponent();
         }
-
         private void tbTenMH_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void btnThemMH_Click(object sender, RoutedEventArgs e)
+        {
+            if (user_bus.add_new_HH(tbTenMH.Text,cbNCC.Text,tbDVT.Text,cbNhomMH.Text,tbDonGia.Text))
+                MessageBox.Show("Thêm thành công");
+            else MessageBox.Show("Thêm thất bại");
 
         }
     }

@@ -3,7 +3,7 @@ using FireSharp.Response;
 using System.Collections.Generic;
 namespace DAL
 {
-    class DAL_CTGiaCa
+    public class DAL_CTGiaCa
     {
         string db_path = "CTGiaCa/";
         public bool add_CTGiaCa(string nCTGiacaID, string nGiaca, string nNgayUpdate)

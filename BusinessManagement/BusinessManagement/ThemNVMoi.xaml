@@ -37,27 +37,32 @@
                 <TextBox Margin="0 19 20 0" x:Name="Username"/>
                 <PasswordBox Margin="0 19 20 0" x:Name="Password"/>
                 <DatePicker Margin="0 19 20 0" x:Name="DOB"/>
-                <TextBox Margin="0 19 20 0" x:Name="Gender"/>
+                <ComboBox Canvas.Left="20" Canvas.Top="20" x:Name="Gender"
+                      FontSize="18" FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,2,20,0">
+                    <ComboBoxItem Content="Nam"/>
+                    <ComboBoxItem Content="Nữ"/>
+
+                </ComboBox>
                 <TextBox Margin="0 19 20 0" x:Name="BirthPlace"/>
                 <TextBox Margin="0 19 20 0" x:Name="Address"/>
-                <TextBox Margin="0 19 20 0" x:Name="Position"/>
-                <ComboBox Canvas.Left="20" Canvas.Top="20"
+                <ComboBox Canvas.Left="20" Canvas.Top="20" x:Name="Position"
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,2,20,0">
-                    <ComboBoxItem Content="Thưởng tháng mức 1"/>
-                    <ComboBoxItem Content="Thưởng tháng mức 2"/>
-                    <ComboBoxItem Content="Thưởng tháng mức 3"/>
-                    <ComboBoxItem Content="Thưởng chức vụ quản lý"/>
-                    <ComboBoxItem Content="Thưởng chức vụ nhân viên"/>
-                    <ComboBoxItem Content="Hợp đồng thử việc"/>
-                    <ComboBoxItem Content="Hợp đồng làm việc 1 năm"/>
-                    <ComboBoxItem Content="Hợp đồng làm việc 3 năm"/>
-                    <ComboBoxItem Content="Hợp đồng làm việc 5 năm"/>
+                    <ComboBoxItem Content="NVCT"/>
+
                 </ComboBox>
-                <DatePicker Margin="0 19 20 0"/>
-                <ComboBox Canvas.Left="20" Canvas.Top="20"
+                <ComboBox Canvas.Left="20" Canvas.Top="20" Name="HopDong"
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,2,20,0">
+                    <ComboBoxItem Content="HD1NAM"/>
+                
+                </ComboBox>
+                <DatePicker Margin="0 19 20 0" x:Name="HDtill"/>
+                <ComboBox Canvas.Left="20" Canvas.Top="20"
+                      FontSize="18" FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,2,20,0"
+                         x:Name="TrinhDo">
                     <ComboBoxItem Content="THCS"/>
                     <ComboBoxItem Content="THPT"/>
                     <ComboBoxItem Content="Kỹ thuật viên"/>
@@ -65,7 +70,7 @@
                     <ComboBoxItem Content="Cao đẳng"/>
                     <ComboBoxItem Content="Đại học"/>
                 </ComboBox>
-                <Button Height="40" Margin="180,10,20,0" FontSize="20" Content="Thêm nhân viên"/>
+                <Button x:Name="btnThemNV" Height="40" Margin="180,10,20,0" FontSize="20" Content="Thêm nhân viên" Click="btnThemNV_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

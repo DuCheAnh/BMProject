@@ -26,7 +26,7 @@
                 <TextBox Margin="0 20 20 0" x:Name="HoTen"/>
                 <TextBox Margin="0 19 20 0" x:Name="SDT"/>
                 <TextBox Margin="0 19 20 0" x:Name="DiaChi"/>
-                <Button Height="40" Margin="180,20,20,20" FontSize="20" Content="Thêm khách hàng"/>
+                <Button Height="40" Margin="180,20,20,20" FontSize="20" Content="Thêm khách hàng" x:Name="btnThemKH" Click="btnThemKH_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

@@ -1,4 +1,5 @@
 ﻿using DTO;
+
 namespace BUS
 {
     public static class CurrentUser

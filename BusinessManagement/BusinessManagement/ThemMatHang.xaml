@@ -22,7 +22,10 @@
             <ComboBox Canvas.Left="20" Canvas.Top="100" 
                       materialDesign:HintAssist.Hint="Nhà Cung Cấp"
                       FontSize="18" FontWeight="Bold"
-                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                      Name="cbNCC">
+                <ComboBoxItem Content="MSI"></ComboBoxItem>
+                <ComboBoxItem Content="ASUS"></ComboBoxItem>
             </ComboBox>
             <TextBox x:Name="tbDVT" Width="200" Height="50"
                      Canvas.Left="20" Canvas.Top="160"
@@ -35,7 +38,8 @@
             <ComboBox Canvas.Left="20" Canvas.Top="230"
                       materialDesign:HintAssist.Hint="Nhóm Mặt Hàng"
                       FontSize="18" FontWeight="Bold"
-                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" >
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                      x:Name="cbNhomMH">
                 <ComboBoxItem Content="CPU"/>
                 <ComboBoxItem Content="Mainboard"/>
                 <ComboBoxItem Content="VGA"/>
@@ -55,7 +59,7 @@
             <Button x:Name="btnThemMH" Width="180" Height="50"
                     Canvas.Bottom="20" Canvas.Right="20"
                     Content="Thêm Mặt Hàng" FontWeight="Bold" FontSize="15" 
-                    IsEnabled="False"
+                    Click="btnThemMH_Click"
                     >
             </Button>
         </Canvas>
