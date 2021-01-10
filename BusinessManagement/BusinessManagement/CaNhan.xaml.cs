@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace BusinessManagement
 {
     /// <summary>
@@ -23,6 +10,30 @@ namespace BusinessManagement
         public CaNhan()
         {
             InitializeComponent();
+        }
+        private void User_info_load(string nTennv, string nManv, string nNgaysinh, string nGioitinh, string nNoisinh,
+                                    string nDiachi, string nTrinhdo, string nPBhientai)
+        {
+            lbTenNV.Content = nTennv;
+            lbMaNV.Content = nManv;
+            lbNgaySinh.Content = nNgaysinh;
+            lbGioiTinh.Content = nGioitinh;
+            lbNoiSinh.Content = nNoisinh;
+            lbDiaChi.Content = nDiachi;
+            lbTrinhDo.Content = nTrinhdo;
+            lbPhongBan.Content = nPBhientai;
+        }
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            lbTenNV.Content = BUS.CurrentUser.nhanvien.tennv;
+            lbMaNV.Content = BUS.CurrentUser.nhanvien.NVID;
+            lbNgaySinh.Content = BUS.CurrentUser.nhanvien.email;
+            lbGioiTinh.Content = BUS.CurrentUser.nhanvien.CTThuongID;
+            lbNoiSinh.Content = BUS.CurrentUser.nhanvien.type;
+            lbDiaChi.Content = BUS.CurrentUser.nhanvien.CTLamthemID;
+            lbTrinhDo.Content = BUS.CurrentUser.nhanvien.CTChucvuID;
+            lbPhongBan.Content = BUS.CurrentUser.user.PBID;
+            
         }
     }
 }

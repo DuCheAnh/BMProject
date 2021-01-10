@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BUS;
 namespace BusinessManagement
 {
     /// <summary>
@@ -19,6 +19,7 @@ namespace BusinessManagement
     /// </summary>
     public partial class DangNhap : Window
     {
+        BUS_USER user_bus= new BUS_USER(); 
         public DangNhap()
         {
             InitializeComponent();
@@ -35,5 +36,12 @@ namespace BusinessManagement
         {
             this.Close();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            BUS.CurrentUser.user = user_bus.get_user_from_id("001");
+            BUS.CurrentUser.nhanvien = user_bus.get_nv_from_id(BUS.CurrentUser.user.NVID);
+        }
+
     }
 }
