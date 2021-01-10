@@ -1,9 +1,11 @@
 ﻿using DAL;
 using DTO;
+using System.Collections.Generic;
 namespace BUS
 {
     public class BUS_USER
     {
+        List<string> random = new List<string>();
         public UserData get_user_from_id(string nUid)
         {
             DAL_User user_func = new DAL_User();
