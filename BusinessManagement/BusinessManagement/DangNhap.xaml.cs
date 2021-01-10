@@ -15,9 +15,13 @@ namespace BusinessManagement
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mn = new MainWindow();
-            mn.Show();
-            this.Close();
+            if (user_bus.loginchecker(UsernameBox.Text, PasswordBox.Password) != null)
+            {
+                MainWindow mn = new MainWindow();
+                mn.Show();
+                this.Close();
+            }
+            else MessageBox.Show("username or password is incorrect");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -27,8 +31,7 @@ namespace BusinessManagement
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            BUS.CurrentUser.user = user_bus.get_user_from_id("001");
-            BUS.CurrentUser.nhanvien = user_bus.get_nv_from_id(BUS.CurrentUser.user.NVID);
+
         }
 
     }

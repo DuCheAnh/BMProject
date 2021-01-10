@@ -59,7 +59,7 @@
                     <!--Username-->
 
                     <TextBox 
-                        x:Name="Username"
+                        x:Name="UsernameBox"
                         materialDesign:HintAssist.Hint="Tài khoản"
                         FontFamily="Tahoma"
                         FontWeight="Light"
@@ -76,7 +76,7 @@
                 <!--Password-->
                 <StackPanel>
                     <PasswordBox
-  x:Name="Password"
+  x:Name="PasswordBox"
                 FontFamily="Tahoma"
                         FontWeight="Light"
                         FontSize="20"
