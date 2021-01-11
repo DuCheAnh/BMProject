@@ -30,7 +30,15 @@ namespace BUS
             DAL_NhanVien nhanvien_func = new DAL_NhanVien();
             return nhanvien_func.get_NV(nNVID);
         }
-
+        public string get_user_password(string nUid)
+        {
+            DAL_User user_func = new DAL_User();
+            if (user_func.get_user(nUid) != null)
+            {
+                return user_func.get_user(nUid).matkhau;
+            }
+            else return null;
+        }
 
         public bool add_new_nv(string sName, string sNVID, string sUsername, string sPassword, string sDOB, string sGioitinh
            , string sNoisinh, string sDiachi, string sCVtype, string sHopDongID, string sTGKyket, string sTrinhdo, string sPBID)
@@ -104,6 +112,12 @@ namespace BUS
             string sNgay = DateTime.Now.ToString();
             giaca_func.add_CTGiaCa(sIDDT, sGia, sNgay);
             return true;
+        }
+
+        public UserData search_user(string nTaikhoan)
+        {
+            DAL_User user_func = new DAL_User();
+            return user_func.search_user(nTaikhoan);
         }
     }
 }

@@ -10,7 +10,7 @@
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
+        >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -62,5 +62,17 @@ namespace DAL
             }
             else return null;
         }
+
+        public UserData search_user(string nTaikhoan)
+        {
+            foreach (UserData user in getall_user())
+            {
+                if (nTaikhoan == user.taikhoan)
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
     }
 }

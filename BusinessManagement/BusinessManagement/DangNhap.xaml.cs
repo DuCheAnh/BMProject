@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System.Windows;
 namespace BusinessManagement
 {
@@ -13,7 +14,7 @@ namespace BusinessManagement
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void a(object sender, RoutedEventArgs e)
         {
             MainWindow mn = new MainWindow();
             mn.Show();
@@ -25,10 +26,23 @@ namespace BusinessManagement
             this.Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            BUS.CurrentUser.user = user_bus.get_user_from_id("637459267331457059");
-            BUS.CurrentUser.nhanvien = user_bus.get_nv_from_id(BUS.CurrentUser.user.NVID);
+            UserData user = user_bus.search_user(Username.Text);
+            
+            if (user != null && user.matkhau == Password.Password)
+            //BUS.CurrentUser.user = user_bus.get_user_from_id("637459267331457059");
+            {
+                CurrentUser.user = user_bus.get_user_from_id(user.uid);
+                CurrentUser.nhanvien = user_bus.get_nv_from_id(user.NVID);
+                MainWindow mn = new MainWindow();
+                mn.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("sai");
+            }
         }
 
     }
