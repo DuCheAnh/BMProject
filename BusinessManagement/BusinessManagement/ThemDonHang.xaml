@@ -1,0 +1,30 @@
+﻿<Window x:Class="BusinessManagement.ThemDonHang"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessManagement"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ThemDonHang" Height="700" Width="600"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Canvas>
+            <ComboBox x:Name="MaKH"
+                      Canvas.Top="20" Canvas.Left='20'
+                      materialDesign:HintAssist.Hint="Mã Khách hàng"
+                      FontSize="18" FontWeight="Bold"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                      Width="300"></ComboBox>
+            <Button x:Name="btnThemMH" Canvas.Top="20" Canvas.Left="400" Height="40" Width="160" Click="btnThemMH_Click">Thêm mặt hàng</Button>
+            <Button Canvas.Bottom="20" Canvas.Right="20" Width="180" Height="50">Thêm Đơn Hàng</Button>
+            <ScrollViewer Canvas.Left="20" Canvas.Top="100"
+                    Width="560" Height="480">
+                <StackPanel x:Name="ThemMH">
+
+                </StackPanel>
+
+            </ScrollViewer>
+        </Canvas>
+    </Grid>
+</Window>

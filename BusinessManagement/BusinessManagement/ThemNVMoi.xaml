@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         FontSize="16"
         FontFamily="Tahoma"
-        Title="ThemNVMoi" Height="700" Width="600">
+        Title="ThemNVMoi" Height="700" Width="600"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="191*"/>
@@ -55,8 +56,7 @@
                 <ComboBox Canvas.Left="20" Canvas.Top="20" Name="HopDong"
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="0,2,20,0">
-                    <ComboBoxItem Content="HD1NAM"/>
-                
+
                 </ComboBox>
                 <DatePicker Margin="0 19 20 0" x:Name="HDtill"/>
                 <ComboBox Canvas.Left="20" Canvas.Top="20"

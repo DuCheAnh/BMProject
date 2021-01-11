@@ -134,7 +134,8 @@ namespace BusinessManagement
 
         private void btnThemHopDong_Click(object sender, RoutedEventArgs e)
         {
-
+            ThemDienHD them = new ThemDienHD();
+            them.Show();
         }
 
         private void btnThemNhaCC_Click(object sender, RoutedEventArgs e)

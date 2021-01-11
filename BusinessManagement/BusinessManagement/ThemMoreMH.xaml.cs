@@ -12,23 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BUS;
 
 namespace BusinessManagement
 {
     /// <summary>
-    /// Interaction logic for DonHang.xaml
+    /// Interaction logic for ThemMoreMH.xaml
     /// </summary>
-    public partial class DonHang : UserControl
+    public partial class ThemMoreMH : UserControl
     {
-        public DonHang()
+        BUS_USER user_bus = new BUS_USER();
+        public ThemMoreMH()
         {
             InitializeComponent();
         }
 
-        private void bntThemDH_Click(object sender, RoutedEventArgs e)
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            ThemDonHang them = new ThemDonHang();
-            them.Show();
+            List<string> list = user_bus.getallMH();
+            MaMH.ItemsSource = list;
         }
     }
 }

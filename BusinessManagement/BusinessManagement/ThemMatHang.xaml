@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         FontFamily="Tahoma"
         ResizeMode="NoResize"
-        Title="Thêm Mặt Hàng" Height="460" Width="400">
+        Title="Thêm Mặt Hàng" Height="460" Width="400"
+        Loaded="Window_Loaded">
     <Grid>
         <Canvas>
             <TextBox x:Name="tbTenMH" Width="350" Height="60"
@@ -24,8 +25,6 @@
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                       Name="cbNCC">
-                <ComboBoxItem Content="MSI"></ComboBoxItem>
-                <ComboBoxItem Content="ASUS"></ComboBoxItem>
             </ComboBox>
             <TextBox x:Name="tbDVT" Width="200" Height="50"
                      Canvas.Left="20" Canvas.Top="160"

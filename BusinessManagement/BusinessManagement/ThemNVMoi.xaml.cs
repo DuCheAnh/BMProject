@@ -33,5 +33,11 @@ namespace BusinessManagement
                 MessageBox.Show("Thêm thành công");
             else MessageBox.Show("Thêm thất bại");
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> listHD = user_bus.getallHD();
+            HopDong.ItemsSource = listHD;
+        }
     }
 }

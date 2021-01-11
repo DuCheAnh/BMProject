@@ -30,5 +30,11 @@ namespace BusinessManagement
             else MessageBox.Show("Thêm thất bại");
 
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> listcc = user_bus.getallNCC();
+            cbNCC.ItemsSource = listcc;
+        }
     }
 }

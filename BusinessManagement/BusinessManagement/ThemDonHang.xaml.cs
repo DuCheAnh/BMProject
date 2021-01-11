@@ -10,25 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BUS;
 
 namespace BusinessManagement
 {
     /// <summary>
-    /// Interaction logic for DonHang.xaml
+    /// Interaction logic for ThemDonHang.xaml
     /// </summary>
-    public partial class DonHang : UserControl
+    public partial class ThemDonHang : Window
     {
-        public DonHang()
+        BUS_USER user_bus = new BUS_USER();
+        public ThemDonHang()
         {
             InitializeComponent();
         }
 
-        private void bntThemDH_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ThemDonHang them = new ThemDonHang();
-            them.Show();
+            List<string> list = user_bus.getallKH();
+            MaKH.ItemsSource = list;
+        }
+
+        private void btnThemMH_Click(object sender, RoutedEventArgs e)
+        {
+            ThemMoreMH mh = new ThemMoreMH();
+            ThemMH.Children.Add(mh);
         }
     }
 }

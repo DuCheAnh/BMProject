@@ -101,6 +101,12 @@
     <Compile Include="QLNgayGio.xaml.cs">
       <DependentUpon>QLNgayGio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ThemDienHD.xaml.cs">
+      <DependentUpon>ThemDienHD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDonHang.xaml.cs">
+      <DependentUpon>ThemDonHang.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ThemHopDong.xaml.cs">
       <DependentUpon>ThemHopDong.xaml</DependentUpon>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="ThemMatHang.xaml.cs">
       <DependentUpon>ThemMatHang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemMoreMH.xaml.cs">
+      <DependentUpon>ThemMoreMH.xaml</DependentUpon>
     </Compile>
     <Compile Include="ThemNCC.xaml.cs">
       <DependentUpon>ThemNCC.xaml</DependentUpon>
@@ -238,6 +247,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ThemDienHD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemDonHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ThemHopDong.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -247,6 +264,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ThemMatHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThemMoreMH.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

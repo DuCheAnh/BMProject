@@ -10,25 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BUS;
 
 namespace BusinessManagement
 {
     /// <summary>
-    /// Interaction logic for DonHang.xaml
+    /// Interaction logic for ThemDienHD.xaml
     /// </summary>
-    public partial class DonHang : UserControl
+    public partial class ThemDienHD : Window
     {
-        public DonHang()
+        BUS_USER user_bus = new BUS_USER();
+        public ThemDienHD()
         {
             InitializeComponent();
         }
 
-        private void bntThemDH_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ThemDonHang them = new ThemDonHang();
-            them.Show();
+            long luongcb = Convert.ToInt32(LuongCB.Text);
+            if (user_bus.add_new_HD(MaHD.Text, TenHD.Text, luongcb, Chitiet.Text))
+                MessageBox.Show("Thêm thành công");
+            else MessageBox.Show("Thêm thất bại");
         }
     }
 }
