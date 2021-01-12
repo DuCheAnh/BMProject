@@ -9,7 +9,8 @@
         FontFamily="Tahoma"
         ResizeMode="NoResize"
         Title="Thêm Mặt Hàng" Height="460" Width="400"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Canvas>
             <TextBox x:Name="tbTenMH" Width="350" Height="60"
@@ -59,6 +60,7 @@
                     Canvas.Bottom="20" Canvas.Right="20"
                     Content="Thêm Mặt Hàng" FontWeight="Bold" FontSize="15" 
                     Click="btnThemMH_Click"
+                    Background="DarkBlue" BorderBrush="DarkBlue"
                     >
             </Button>
         </Canvas>

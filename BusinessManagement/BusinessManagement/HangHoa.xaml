@@ -16,15 +16,15 @@
         </Grid.RowDefinitions>
         <Canvas Grid.Row="0">
             <materialDesign:ColorZone
-                Grid.Column="2"
                 Width="400"
                 Mode="Standard"
+                BorderBrush="White"
                 Padding="1 1 1 1"
                 CornerRadius="20"
                 Panel.ZIndex="1"
                 Canvas.Top="20"
                 Canvas.Left="150"
-                materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                >
 
                 <Grid>
                     <Grid.ColumnDefinitions>

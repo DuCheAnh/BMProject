@@ -7,7 +7,8 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="ThemDonHang" Height="700" Width="600"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Canvas>
             <ComboBox x:Name="MaKH"
@@ -16,8 +17,8 @@
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                       Width="300"></ComboBox>
-            <Button x:Name="btnThemMH" Canvas.Top="20" Canvas.Left="400" Height="40" Width="160" Click="btnThemMH_Click">Thêm mặt hàng</Button>
-            <Button Canvas.Bottom="20" Canvas.Right="20" Width="180" Height="50">Thêm Đơn Hàng</Button>
+            <Button x:Name="btnThemMH" Canvas.Top="20" Canvas.Left="400" Height="40" Width="160" Click="btnThemMH_Click" Background="DarkBlue" BorderBrush="DarkBlue">Thêm mặt hàng</Button>
+            <Button Canvas.Bottom="20" Canvas.Right="20" Width="180" Height="50" Background="DarkBlue" BorderBrush="DarkBlue">Thêm Đơn Hàng</Button>
             <ScrollViewer Canvas.Left="20" Canvas.Top="100"
                     Width="560" Height="480">
                 <StackPanel x:Name="ThemMH">

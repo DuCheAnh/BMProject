@@ -29,6 +29,6 @@
         </StackPanel>
         <Button Grid.Row="2" Margin="450 10 10 10" 
                 Content="Yêu Cầu"
-                Click="btnYeuCau_Click"></Button>
+                Click="btnYeuCau_Click" Background="DarkBlue" BorderBrush="DarkBlue"></Button>
     </Grid>
 </Window>

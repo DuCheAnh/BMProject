@@ -22,9 +22,9 @@
                 Padding="1 1 1 1"
                 CornerRadius="20"
                 Panel.ZIndex="1"
+                BorderBrush="White"
                 Canvas.Top="20"
-                Canvas.Left="150"
-                materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                Canvas.Left="150">
 
                 <Grid>
                     <Grid.ColumnDefinitions>

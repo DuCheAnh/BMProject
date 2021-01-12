@@ -16,7 +16,7 @@ namespace BusinessManagement
 
         private void a(object sender, RoutedEventArgs e)
         {
-            MainWindow mn = new MainWindow();
+            NewMW mn = new NewMW();
             mn.Show();
             this.Close();
         }
@@ -35,7 +35,7 @@ namespace BusinessManagement
             {
                 CurrentUser.user = user_bus.get_user_from_id(user.uid);
                 CurrentUser.nhanvien = user_bus.get_nv_from_id(user.NVID);
-                MainWindow mn = new MainWindow();
+                NewMW mn = new NewMW();
                 mn.Show();
                 this.Close();
             }

@@ -19,7 +19,7 @@
                 <ComboBoxItem Content="Giỏi"/>
                 <ComboBoxItem Content="Khá"/>
             </ComboBox>
-            <Button Canvas.Top="40" Canvas.Right="10" Width="120">
+            <Button Canvas.Top="40" Canvas.Right="10" Width="120" Background="DarkBlue" BorderBrush="DarkBlue">
                 Đồng ý
             </Button>
         </Canvas>

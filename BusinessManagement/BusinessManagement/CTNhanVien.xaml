@@ -77,8 +77,10 @@
                     Width="210" Height="50"
                     HorizontalAlignment="Right"
                                 Margin="20 20 20 20"
-                                    Click="btnDoiChucVu_Click">
-                                Đổi Chức Vụ
+                                    Click="btnDoiChucVu_Click"
+                                    Background="DarkBlue" BorderBrush="DarkBlue">
+                                <Label Foreground="White" FontSize="18"  >Đổi Chức Vụ</Label>
+                                
                             </Button>
                             <Label x:Name="lbPhongBan"
                            Content="Phòng ban hiện tại"
@@ -98,8 +100,12 @@
                             <Button x:Name="btnThemHopDong"
                     Width="210" Height="50"
                     HorizontalAlignment="Right"
-                                Margin="20 20 20 20" Click="btnThemHopDong_Click">
-                                Thêm Hợp Đồng
+                                Margin="20 20 20 20" Click="btnThemHopDong_Click"
+                                    Background="DarkBlue" BorderBrush="DarkBlue">
+                                <Label Foreground="White">
+                                    Thêm Hợp Đồng
+                                </Label>
+                                
                             </Button>
                         </StackPanel>
                     </Grid>

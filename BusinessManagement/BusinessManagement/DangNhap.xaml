@@ -19,8 +19,8 @@
         <Border CornerRadius="10" Grid.ColumnSpan="2">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#FF93EFF3" Offset="0.0"/>
-                    <GradientStop Color="#FF22A6A0" Offset="1"/>
+                    <GradientStop Color="#FF12599E" Offset="0.0"/>
+                    <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
@@ -93,8 +93,8 @@
                         <Button Canvas.Bottom="0" Canvas.Left="210"
                                 Style="{StaticResource MaterialDesignRaisedButton}"
                                 ToolTip="Resource name: MaterialDesignRaisedButton"  
-                                Background="Transparent" 
-                                BorderBrush="Black"
+                                Background="DarkBlue" 
+                                BorderBrush="DarkBlue"
                                 Height="40"
                                 Width="160" 
                                 Canvas.Top="-50" 

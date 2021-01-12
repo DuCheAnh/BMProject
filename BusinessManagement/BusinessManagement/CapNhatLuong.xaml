@@ -33,8 +33,9 @@
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      FontSize="18" FontWeight="Bold" 
                      />
-            <Button Canvas.Top="90" Canvas.Right="10" Width="120">
-                Đồng ý
+            <Button Canvas.Top="90" Canvas.Right="10" Width="120" Background="DarkBlue" Foreground="DarkBlue" BorderBrush="DarkBlue">
+                <Label Content="Đồng ý" FontSize="13" Foreground="White"/>
+               
             </Button>
         </Canvas>
     </Grid>

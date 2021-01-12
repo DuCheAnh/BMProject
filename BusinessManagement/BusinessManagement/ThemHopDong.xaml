@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:BusinessManagement"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Thêm Hợp Đồng" Height="170" Width="500">
+        Title="Thêm Hợp Đồng" Height="170" Width="500"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Canvas>
             <ComboBox Canvas.Left="20" Canvas.Top="20"
@@ -36,7 +37,7 @@
                     </Binding>
                 </DatePicker.SelectedDate>
             </DatePicker>
-            <Button Canvas.Top="90" Canvas.Right="10" Width="120">
+            <Button Canvas.Top="90" Canvas.Right="10" Width="120" Background="DarkBlue" BorderBrush="DarkBlue">
                 Đồng ý
             </Button>
         </Canvas>

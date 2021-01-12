@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
             FontFamily="Tahoma"
              FontSize="20"
-             d:DesignHeight="600" d:DesignWidth="1000">
+             d:DesignHeight="580" d:DesignWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"></RowDefinition>
@@ -17,14 +17,14 @@
         <Canvas Grid.Row="0">
             <materialDesign:ColorZone
                 Grid.Column="2"
+                BorderBrush="White"
                 Width="400"
                 Mode="Standard"
                 Padding="1 1 1 1"
                 CornerRadius="20"
                 Panel.ZIndex="1"
                 Canvas.Top="20"
-                Canvas.Left="150"
-                materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                Canvas.Left="150">
 
                 <Grid>
                     <Grid.ColumnDefinitions>

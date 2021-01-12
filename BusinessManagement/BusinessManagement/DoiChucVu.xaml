@@ -18,8 +18,8 @@
                 <ComboBoxItem Content="Quản lý"/>
                 <ComboBoxItem Content="Nhân Viên"/>
             </ComboBox>
-            <Button Canvas.Top="40" Canvas.Right="10" Width="120">
-                Đồng ý
+            <Button Canvas.Top="40" Canvas.Right="10" Width="120" Background="DarkBlue" BorderBrush="DarkBlue">
+                <Label FontFamily="segment" Foreground="White">Đồng ý</Label>
             </Button>
         </Canvas>
     </Grid>

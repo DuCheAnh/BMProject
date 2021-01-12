@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:BusinessManagement"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Thêm Nhà Cung Cấp" Height="300" Width="400">
+        Title="Thêm Nhà Cung Cấp" Height="300" Width="400"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Canvas>
             <TextBox x:Name="tbTenNCC" Width="350" Height="60"
@@ -29,6 +30,7 @@
                     Canvas.Bottom="20" Canvas.Right="20"
                     Content="Thêm Nhà Cung Cấp" FontWeight="Bold" FontSize="15" 
                     IsEnabled="True" Click="btnThemNCC_Click"
+                    Background="DarkBlue" BorderBrush="DarkBlue"
                     >
             </Button>
         </Canvas>

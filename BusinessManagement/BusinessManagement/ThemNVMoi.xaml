@@ -8,7 +8,8 @@
         FontSize="16"
         FontFamily="Tahoma"
         Title="ThemNVMoi" Height="700" Width="600"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="191*"/>
@@ -70,7 +71,7 @@
                     <ComboBoxItem Content="Cao đẳng"/>
                     <ComboBoxItem Content="Đại học"/>
                 </ComboBox>
-                <Button x:Name="btnThemNV" Height="40" Margin="180,10,20,0" FontSize="20" Content="Thêm nhân viên" Click="btnThemNV_Click"/>
+                <Button x:Name="btnThemNV" Height="50" Margin="180,10,20,0" FontSize="20" Content="Thêm nhân viên" Click="btnThemNV_Click" Background="DarkBlue" BorderBrush="DarkBlue"/>
             </StackPanel>
         </Grid>
     </Grid>

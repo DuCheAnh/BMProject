@@ -23,8 +23,7 @@
                 CornerRadius="20"
                 Panel.ZIndex="1"
                 Canvas.Top="20"
-                Canvas.Left="150"
-                materialDesign:ShadowAssist.ShadowDepth="Depth1">
+                Canvas.Left="150">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -54,7 +53,9 @@
                         />
                 </Grid>
             </materialDesign:ColorZone>
-            <Button Canvas.Left="660" Canvas.Top="20" Height="40" Width="180" x:Name="bntThemDH" Content="Thêm đơn hàng" Click="bntThemDH_Click"></Button>
+            <Button Canvas.Left="660" Canvas.Top="20" Height="40" Width="180" x:Name="bntThemDH" Background="DarkBlue" BorderBrush="DarkBlue" Click="bntThemDH_Click">
+            <Label Content="Thêm đơn hàng" FontFamily="segment" FontSize="16" Foreground="White"></Label>
+            </Button>
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>

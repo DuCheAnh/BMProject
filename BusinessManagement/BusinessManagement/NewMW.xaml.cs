@@ -21,23 +21,18 @@ namespace BusinessManagement
     {
         void NhanVienLogin()
         {
-            btnAddNV.Visibility = Visibility.Collapsed;
-            btnQLNV.Visibility = Visibility.Collapsed;
-            btnQLPhongBan.Visibility = Visibility.Collapsed;
-            btnQLGioLam.Visibility = Visibility.Collapsed;
-            btnDGKN.Visibility = Visibility.Collapsed;
-            btnTKNV.Visibility = Visibility.Collapsed;
-            btnYeuCauGD.Visibility = Visibility.Collapsed;
-            btnXemYeuCau.Visibility = Visibility.Collapsed;
-            PBButton.Visibility = Visibility.Collapsed;
+            epQL.Visibility = Visibility.Collapsed;
         }
         void QuanLyLogin()
         {
             btnXemYeuCau.Visibility = Visibility.Collapsed;
-            PBButton.Visibility = Visibility.Collapsed;
+            btnThemHopDong.Visibility = Visibility.Collapsed;
+            btnThemMatHang.Visibility = Visibility.Collapsed;
+            btnThemNhaCC.Visibility = Visibility.Collapsed;
         }
         void GiamDocLogin()
         {
+            PBButton.Visibility = Visibility.Visible;
             btnYeuCauGD.Visibility = Visibility.Collapsed;
             btnQLPhongBan.Visibility = Visibility.Collapsed;
         }
@@ -45,7 +40,20 @@ namespace BusinessManagement
         public NewMW()
         {
             InitializeComponent();
-            GiamDocLogin();
+            string logintype = BUS.CurrentUser.nhanvien.type;
+            switch (logintype)
+            {
+                case "NVCT":
+                    NhanVienLogin();
+                    break;
+                case "QL":
+                    QuanLyLogin();
+                    break;
+                case "GD":
+                    GiamDocLogin();
+                    break;
+
+            }
         }
 
         private void btnDonHang_Click(object sender, RoutedEventArgs e)
@@ -145,6 +153,11 @@ namespace BusinessManagement
         {
             ThemNCC them = new ThemNCC();
             them.Show();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            lbTenUser.Content = BUS.CurrentUser.nhanvien.tennv;
         }
     }
 }

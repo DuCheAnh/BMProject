@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:BusinessManagement"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
         Title="Thêm Hợp Đồng" Height="380" Width="400">
     <Grid>
         <Canvas>
@@ -38,7 +39,7 @@
                     materialDesign:HintAssist.Hint="Chi tiết"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                 ></TextBox>
-            <Button Canvas.Top="300" Canvas.Right="10" Width="120" Click="Button_Click">
+            <Button Canvas.Top="300" Canvas.Right="10" Width="120" Click="Button_Click" Background="DarkBlue" BorderBrush="DarkBlue">
                 Đồng ý
             </Button>
         </Canvas>
