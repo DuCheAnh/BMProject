@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:BusinessManagement"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        FontFamily="Segment"
+        FontSize="20"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="QLKD" Height="730" Width="1300"
@@ -179,6 +181,9 @@
                     <materialDesign:PackIcon Kind="ContentPaste"/>
                 </Button>
                 <Button Name="btnThemNhaCC" Click="btnThemNhaCC_Click">
+                    <materialDesign:PackIcon Kind="TruckDelivery" />
+                </Button>
+                <Button Name="btnThemNV">
                     <materialDesign:PackIcon Kind="TruckDelivery" />
                 </Button>
             </StackPanel>

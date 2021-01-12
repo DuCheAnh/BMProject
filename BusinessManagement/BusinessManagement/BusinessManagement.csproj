@@ -92,6 +92,9 @@
     <Compile Include="LichDGKN.xaml.cs">
       <DependentUpon>LichDGKN.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewMW.xaml.cs">
+      <DependentUpon>NewMW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien.xaml.cs">
       <DependentUpon>NhanVien.xaml</DependentUpon>
     </Compile>
@@ -235,6 +238,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewMW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NhanVien.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

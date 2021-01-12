@@ -1,0 +1,258 @@
+﻿<Window x:Class="BusinessManagement.NewMW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        FontFamily="Segment"
+        FontSize="20"
+        WindowStartupLocation="CenterScreen"
+        Title="NewMW" Height="800" Width="1400"
+        Background="LightGray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="600*"/>
+
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Gray" BorderThickness="1">
+            <Grid Grid.Column="0" Background="White">
+                <StackPanel Margin="0,80,0,0">
+                    <StackPanel.Resources>
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="0,1,0,0"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
+                            Height="55"
+                            ToolTipService.InitialShowDelay="50" 
+                            ToolTipService.ShowDuration="20000" 
+                            ToolTipService.BetweenShowDelay="0" 
+                            ToolTip="Đơn hàng">
+
+                        <materialDesign:PackIcon Kind="Account" Width="40" Height="40" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Margin="0"
+                                                 Background="Transparent"
+                                                 Opacity="0.8"
+                                                 />
+                    </Button>
+                    <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
+                            Height="55"
+                            ToolTipService.InitialShowDelay="50" 
+                            ToolTipService.ShowDuration="20000" 
+                            ToolTipService.BetweenShowDelay="0" 
+                            ToolTip="Khách hàng">
+                        <materialDesign:PackIcon Kind="Account" Width="40" Height="40" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Background="Transparent"
+                                                 Margin="0"
+                                                 Opacity="0.8"
+                                                 />
+                    </Button>
+                    <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
+                            Height="55"
+                            ToolTipService.InitialShowDelay="50" 
+                            ToolTipService.ShowDuration="20000" 
+                            ToolTipService.BetweenShowDelay="0" 
+                            ToolTip="Hóa Đơn">
+                        <materialDesign:PackIcon Kind="Account" Width="40" Height="40" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Background="Transparent"
+                                                 Margin="0"
+                                                 Opacity="0.8"
+                                                 />
+                    </Button>
+                    <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
+                            Height="55"
+                            ToolTipService.InitialShowDelay="50" 
+                            ToolTipService.ShowDuration="20000" 
+                            ToolTipService.BetweenShowDelay="0" 
+                            ToolTip="Hàng Hóa">
+                        <materialDesign:PackIcon Kind="Account" Width="40" Height="40" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Background="Transparent"
+                                                 Margin="0"
+                                                 Opacity="0.8"
+                                                 />
+                    </Button>
+                    <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
+                            Height="55">
+                        <materialDesign:PackIcon Kind="Account" Width="40" Height="40" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Background="Transparent"
+                                                 Margin="0"
+                                                 Opacity="0.8"
+                                                 />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Gray" BorderThickness="1">
+                <Grid Grid.Row="0" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="6*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="7*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Name="PBButton" Width="auto" Height="auto" Margin="10 0" Padding="3"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                HorizontalContentAlignment="Left"
+                                VerticalContentAlignment="Center"
+                                Content="Chọn Phòng Ban..."
+                                FontFamily="Segment"
+                                FontSize="16">
+                            <Button.ContextMenu>
+                                <ContextMenu x:Name="PBContextMenu" PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                                    <MenuItem Header="Phòng Kinh Doanh" />
+                                    <MenuItem Header="Phòng Nhân Sự" />
+                                    <MenuItem Header="Phòng Tài Chính" />
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                            <Button.Triggers>
+                                <EventTrigger SourceName="PBButton" RoutedEvent="Button.Click">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PBContextMenu" Storyboard.TargetProperty="(ContextMenu.IsOpen)">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <sys:Boolean>True</sys:Boolean>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <Grid Grid.Column="1"></Grid>
+                        <Expander Grid.Column="1" ExpandDirection="Left" Background="White" Foreground="DarkBlue">
+                            <StackPanel Orientation="Horizontal">
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnAddNV"
+                        Click="btnAddNV_Click">
+                                    <materialDesign:PackIcon Kind="AccountAdd" Width="auto" Height="auto" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnQLPhongBan"
+                        Click="btnQLPhongBan_Click">
+                                    <materialDesign:PackIcon Kind="Bank" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnQLNV"
+                        Click="btnQLNV_Click">
+                                    <materialDesign:PackIcon Kind="Account" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnQLGioLam"
+                        Click="btnQLGioLam_Click">
+                                    <materialDesign:PackIcon Kind="Timetable" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnDGKN"
+                        Click="btnDGKN_Click">
+                                    <materialDesign:PackIcon Kind="CalendarText" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnTKNV"
+                        Click="btnTKNV_Click">
+                                    <materialDesign:PackIcon Kind="BookOpen" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnYeuCauGD">
+                                    <materialDesign:PackIcon Kind="Email" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
+                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
+                        Panel.ZIndex="0"
+                        x:Name="btnXemYeuCau">
+                                    <materialDesign:PackIcon Kind="Mailbox" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Button>
+                            </StackPanel>
+                        </Expander>
+                    </Grid>
+                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="auto" Height="Auto" FontWeight="Bold" Content="Luu Duc Bao " VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                            <Button Name="MainButton" Width="auto" Height="auto" Margin="0 10 10 10" Padding="3"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    >
+                                <Button.ContextMenu>
+                                    <ContextMenu x:Name="MainContextMenu" PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
+                                        <MenuItem Header="Cá nhân" />
+                                        <MenuItem Header="Đăng xuất" />
+                                    </ContextMenu>
+                                </Button.ContextMenu>
+
+                                <Button.Triggers>
+                                    <EventTrigger SourceName="MainButton" RoutedEvent="Button.Click">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MainContextMenu" Storyboard.TargetProperty="(ContextMenu.IsOpen)">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <sys:Boolean>True</sys:Boolean>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                                <materialDesign:PackIcon Kind="Account" Width="auto" Height="auto" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Background="Transparent"
+                                                 Opacity="1"
+                                                 />
+                            </Button>
+
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Border Background="White" BorderBrush="Black" BorderThickness="0" CornerRadius="7" Margin="6" >
+                    <Grid  x:Name="spMain" Width="1300"  Height="690"  Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                      
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
