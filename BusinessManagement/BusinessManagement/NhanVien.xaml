@@ -51,10 +51,12 @@
                         Width="320"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
+                        KeyDown="ListViewSearchBar_KeyDown"
                         />
                 </Grid>
             </materialDesign:ColorZone>
-            <Button Canvas.Left="660" Canvas.Top="20" Height="40" Width="180" x:Name="bntThemNV" Content="Thêm nhân viên" Click="bntThemNV_Click" Background="DarkBlue" BorderBrush="DarkBlue"></Button>
+            <Button VerticalAlignment="Center" HorizontalAlignment="Right"
+                Canvas.Left="800" Canvas.Top="21" Height="40" Width="180" x:Name="bntThemNV" Content="Thêm nhân viên" Click="bntThemNV_Click" Background="DarkBlue" BorderBrush="DarkBlue"></Button>
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
@@ -80,8 +82,8 @@
 
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Địa Chỉ"
-                                            DisplayMemberBinding="{Binding diachi}">
+                                            Header="Phòng ban"
+                                            DisplayMemberBinding="{Binding PBID}">
 
                             </GridViewColumn>
                         </GridView>

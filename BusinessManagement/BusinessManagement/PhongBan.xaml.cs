@@ -21,6 +21,7 @@ namespace BusinessManagement
     /// </summary>
     public partial class PhongBan : UserControl
     {
+        BUS_USER user_bus = new BUS_USER();
         public PhongBan()
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace BusinessManagement
         public void initPhongbanpage(PBData data)
         {
             PBnameTB.Text = data.tenpb;
+            NVPBListview.ItemsSource = user_bus.getallnv_fromPB(data);
+            SonhanvienTB.Text+= NVPBListview.Items.Count;
         }
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {

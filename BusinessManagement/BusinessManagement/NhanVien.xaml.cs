@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BUS;
+using DTO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using BUS;
-using DTO;
 namespace BusinessManagement
 {
     /// <summary>
@@ -37,15 +27,26 @@ namespace BusinessManagement
         {
             NVListview.ItemsSource = user_bus.getallNV();
         }
-
+        private void filter_listview(string keyword)
+        {
+            NVListview.ItemsSource = user_bus.getallNV().Where(lvi => lvi.tennv.ToLower().Contains(keyword.ToLower()) ||
+                            lvi.NVID.ToLower().Contains(keyword.ToLower())
+                            || lvi.PBID.ToLower().Contains(keyword.ToLower()));
+        }
         private void NVListview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (NVListview.SelectedItems.Count==1)
+            if (NVListview.SelectedItems.Count == 1)
             {
                 CTNhanVien ctnv_inst = new CTNhanVien();
                 ctnv_inst.init_data((Nhanvien)NVListview.SelectedItems[0]);
                 ctnv_inst.Show();
             }
+        }
+
+        private void ListViewSearchBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                filter_listview(ListViewSearchBar.Text);
         }
     }
 }

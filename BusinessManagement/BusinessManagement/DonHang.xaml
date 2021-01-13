@@ -34,11 +34,13 @@
                     <Button x:Name="bthSearchBook" Width="30" Height="30"
                             Style="{DynamicResource MaterialDesignToolButton}"
                             Margin="10 0 10 0"
+                            Click="bthSearchBook_Click"
                             >
                         <materialDesign:PackIcon Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Magnify" Opacity=".56" />
 
                     </Button>
                     <TextBox
+                        KeyDown="ListViewSearchBar_KeyDown"
                         x:Name="ListViewSearchBar"
                         Grid.Column="1"
                         Margin="0 5 15 2"
@@ -53,26 +55,38 @@
                         />
                 </Grid>
             </materialDesign:ColorZone>
-            <Button Canvas.Left="660" Canvas.Top="20" Height="40" Width="180" x:Name="bntThemDH" Background="DarkBlue" BorderBrush="DarkBlue" Click="bntThemDH_Click">
-            <Label Content="Thêm đơn hàng" FontFamily="segment" FontSize="16" Foreground="White"></Label>
+            <Button Canvas.Left="593" Canvas.Top="21" Height="40" Width="180" x:Name="bntThemDH" Background="DarkBlue" BorderBrush="DarkBlue" Click="bntThemDH_Click">
+                <Label Content="Thêm đơn hàng" FontSize="16" Foreground="White"></Label>
+            </Button>
+            <Button IsEnabled="False"
+                Canvas.Left="810" Canvas.Top="21" Height="40" Width="180" x:Name="bntThemHD" Background="DarkBlue" BorderBrush="DarkBlue" Click="bntThemHD_Click">
+                <Label Content="Tạo hóa đơn"  FontSize="16" Foreground="White"></Label>
             </Button>
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
-                <ListView TextElement.FontSize="16" x:Name="DonhangLV">
+                <ListView 
+                    SelectionChanged="DonhangLV_SelectionChanged"
+                    TextElement.FontSize="16" 
+                    x:Name="DonhangLV" 
+                    MouseDoubleClick="DonhangLV_MouseDoubleClick">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="180"
-                                            Header="Mã Đơn Hàng">
+                                            Header="Mã Đơn Hàng"
+                                            DisplayMemberBinding="{Binding DonhangID}">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Mã Khách Hàng">
+                                            Header="Mã Khách Hàng"
+                                            DisplayMemberBinding="{Binding KhachhangID}">
                             </GridViewColumn>
                             <GridViewColumn Width="320"
-                                            Header="Tên Khách Hàng">
+                                            Header="Ngày thêm"
+                                            DisplayMemberBinding="{Binding ngaythem}">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Ngày Lập ĐH">
+                                            Header="Đơn giá"
+                                            DisplayMemberBinding="{Binding trigia}">
 
                             </GridViewColumn>
                         </GridView>

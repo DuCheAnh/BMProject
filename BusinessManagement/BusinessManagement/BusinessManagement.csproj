@@ -77,6 +77,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CapnhatLamthem.xaml.cs">
+      <DependentUpon>CapnhatLamthem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CapNhatLuong.xaml.cs">
       <DependentUpon>CapNhatLuong.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <DependentUpon>YeuCauGD.xaml</DependentUpon>
     </Compile>
     <Page Include="CaNhan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CapnhatLamthem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

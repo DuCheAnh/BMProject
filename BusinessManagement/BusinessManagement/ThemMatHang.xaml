@@ -21,21 +21,21 @@
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      FontSize="25" FontWeight="Bold"
                      />
-            <ComboBox Canvas.Left="20" Canvas.Top="100" 
+            <ComboBox Canvas.Left="20" Canvas.Top="90" Width="200" Height="50"
                       materialDesign:HintAssist.Hint="Nhà Cung Cấp"
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                       Name="cbNCC">
             </ComboBox>
             <TextBox x:Name="tbDVT" Width="200" Height="50"
-                     Canvas.Left="20" Canvas.Top="160"
+                     Canvas.Left="20" Canvas.Top="145"
                      materialDesign:HintAssist.Hint="Đơn Vị Tính"
                      materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                      materialDesign:HintAssist.FloatingScale="0.50"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      FontSize="18" FontWeight="Bold" 
                      />
-            <ComboBox Canvas.Left="20" Canvas.Top="230"
+            <ComboBox Canvas.Left="20" Canvas.Top="210" Width="200" Height="50"
                       materialDesign:HintAssist.Hint="Nhóm Mặt Hàng"
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
@@ -49,18 +49,26 @@
                 <ComboBoxItem Content="Nguyên bộ"/>
             </ComboBox>
             <TextBox x:Name="tbDonGia" Width="200" Height="50"
-                     Canvas.Left="20" Canvas.Top="280"
+                     Canvas.Left="20" Canvas.Top="270"
                      materialDesign:HintAssist.Hint="Đơn giá"
                      materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                      materialDesign:HintAssist.FloatingScale="0.50"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      FontSize="18" FontWeight="Bold" 
                      />
-            <Button x:Name="btnThemMH" Width="180" Height="50"
+            <TextBox x:Name="tbMahang" Width="150" Height="50"
+                     Canvas.Left="20" Canvas.Top="330"
+                     materialDesign:HintAssist.Hint="Mã hàng"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     />
+            <Button x:Name="btnThemMH" Width="150" Height="50"
                     Canvas.Bottom="20" Canvas.Right="20"
                     Content="Thêm Mặt Hàng" FontWeight="Bold" FontSize="15" 
                     Click="btnThemMH_Click"
-                    Background="DarkBlue" BorderBrush="DarkBlue"
+                    Background="DarkBlue" BorderBrush="DarkBlue" Canvas.Left="220" Canvas.Top="330"
                     >
             </Button>
         </Canvas>

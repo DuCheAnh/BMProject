@@ -6,9 +6,40 @@ namespace DAL
     public class DAL_DonHang
     {
         string db_path = "DonHang/";
+        private long get_trigia(string hhid, string sl)
+        {
+            int i = 0;
+            int j = 0;
+            string subhhid = null;
+            string subsl = null;
+            long result = 0;
+            while (hhid.Length>i+1)
+            {
+                if (hhid[i]=='/')
+                {
+                    i++;
+                    j++;
+                }
+                while (hhid[i]!='/')
+                {
+                    subhhid += hhid[i];
+                    i++;
+                }
+                while( sl[j]!='/')
+                {
+                    subsl += sl[j];
+                    j++;
+                }
+                DAL_HangHoa hh_func = new DAL_HangHoa();
+                DAL_CTGiaCa giaca_func = new DAL_CTGiaCa();
+                result += giaca_func.get_CTGiaCa(hh_func.get_HangHoa(subhhid).CTGiacaID).giaca*long.Parse(subsl);
+            }
+
+            return result;
+        }
         public bool add_DonHang(string nDonhangID, string nHanghoaID, string nNgaythem, string nSoluong, string nKhachhangID)
         {
-            var data = new Donhang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID);
+            var data = new Donhang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID,get_trigia(nHanghoaID,nSoluong));
             SetResponse rep = DB_connect.client.Set(db_path + nDonhangID, data);
             Donhang result = rep.ResultAs<Donhang>();
             if (result != null) return true;
@@ -17,7 +48,7 @@ namespace DAL
 
         public bool update_DonHang(string nDonhangID, string nHanghoaID, string nNgaythem, string nSoluong, string nKhachhangID)
         {
-            var data = new Donhang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID);
+            var data = new Donhang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID, get_trigia(nHanghoaID, nSoluong));
             FirebaseResponse rep = DB_connect.client.Update(db_path + nDonhangID, data);
             Donhang result = rep.ResultAs<Donhang>();
             if (result != null) return true;
@@ -61,6 +92,15 @@ namespace DAL
                 return list;
             }
             else return null;
+        }
+
+        public int new_DonHangID()
+        {
+            var rep = DB_connect.client.Get("Counter/DHCounter");
+            NumberCounter data = rep.ResultAs<NumberCounter>();
+            data.value += 1;
+            SetResponse res = DB_connect.client.Set("Counter/DHCounter", data);
+            return data.value;
         }
     }
 }

@@ -5,56 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessManagement"
         mc:Ignorable="d"
-        FontSize="24"
-        FontFamily="Tahoma"
+        FontSize="16"
+        FontFamily="Roboto"
         ResizeMode="NoResize"
-        Title="Chi Tiết Hóa Đơn" Height="460" Width="520">
+        Title="Chi Tiết Hóa Đơn" Height="420" Width="380">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"></ColumnDefinition>
-            <ColumnDefinition Width="340"></ColumnDefinition>
+            <ColumnDefinition Width="140"></ColumnDefinition>
+            <ColumnDefinition Width="240"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <Label Content="Mã HĐ :"
-                   Margin="20 20 20 10"></Label>
-            <Label Content="Mã ĐH :"
+            <Label Content="Mã HĐ:"
+                   Margin="20 20 20 10"
+                   FontWeight="Bold"
+                   Height="28"></Label>
+            <Label Content="Mã ĐH:"
+                   FontWeight="Bold"
                    Margin="20 10">
             </Label>
-            <Label Content="Ngày lập :"
+            <Label Content="Ngày lập:"
+                   FontWeight="Bold"
                    Margin="20 10">
             </Label>
-            <Label Content="Ngày xuất :"
+            <Label Content="Ngày xuất:"
+                   FontWeight="Bold"
                    Margin="20 10">
             </Label>
-            <Label Content="Nhân Viên :"
+            <Label Content="Nhân Viên:"
+                   FontWeight="Bold"
                    Margin="20 10">
             </Label>
-            <Label Content="Mã NV :"
+            <Label Content="Khách hàng:"
+                   FontWeight="Bold"
                    Margin="20 10">
             </Label>
+            <Label Content="Trị giá:" Margin="20 10" FontWeight="Bold"/>
         </StackPanel>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" Margin="0">
             <Label x:Name="lbMaHD"
-                       Content="Mã HD"
-                       Margin="0 20 20 10">
+                       Content="{Binding HoadonID}"
+                       Margin="0 20 20 10"
+                   Height="28">
             </Label>
             <Label x:Name="lbMaDH"
-                       Content="Mã DH"
-                       Margin="0 10">
+                       Content="{Binding DonhangID}"
+                       Margin="0 10"
+                   Height="28">
             </Label>
             <Label x:Name="lbNgayLap"
-                       Content="20/10/2020"
-                       Margin="0 10"></Label>
+                       Content="{Binding ngaylap}"
+                       Margin="0 10"
+                   Height="28"></Label>
             <Label x:Name="lbNgayXuat"
-                       Content="20/10/2020"
-                       Margin="0 10"></Label>
+                       Content="{Binding ngayxuat}"
+                       Margin="0 10"
+                   Height="28"></Label>
             <Label x:Name="lbTenNV"
-                       Content="nguyen van b"
-                       Margin="0 10"></Label>
+                       Content="{Binding tennv}"
+                       Margin="0 10"
+                   Height="28"></Label>
             <Label x:Name="lbMaNV"
-                       Content="nv12380"
-                       Margin="0 10"></Label>
-
+                       Content="{Binding tenkh}"
+                       Margin="0 10"
+                   Height="28"></Label>
+            <Label x:Name="lbTrigia"
+                   Content="{Binding trigia}"
+                   Margin="0 10"
+                   Height="28"/>
+            <Button FontWeight="Light" Width="100" Content="Tạo mới" Margin="100 -5 0 0" 
+                    Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>

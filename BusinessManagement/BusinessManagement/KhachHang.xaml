@@ -40,6 +40,7 @@
 
                     </Button>
                     <TextBox
+                        KeyDown="ListViewSearchBar_KeyDown"
                         x:Name="ListViewSearchBar"
                         Grid.Column="1"
                         Margin="0 5 15 2"

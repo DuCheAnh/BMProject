@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DTO;
-using BUS;
+
 namespace BusinessManagement
 {
     /// <summary>
-    /// Interaction logic for HoaDon.xaml
+    /// Interaction logic for TinhLuong.xaml
     /// </summary>
-    public partial class HoaDon : UserControl
+    public partial class TinhLuong : Window
     {
-        BUS_USER user_bus = new BUS_USER();
-        public HoaDon()
+        public TinhLuong()
         {
             InitializeComponent();
-            Hoadonlistview.ItemsSource = user_bus.getallHDListforShow();
         }
     }
 }

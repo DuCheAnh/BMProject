@@ -70,6 +70,7 @@
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_PB.cs" />
     <Compile Include="DAL_User.cs" />
+    <Compile Include="DAL_YTLT.cs" />
     <Compile Include="DB_connect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

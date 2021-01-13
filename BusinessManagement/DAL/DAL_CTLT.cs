@@ -15,9 +15,10 @@ namespace DAL
             else return false;
         }
 
-        public bool update_CTLT(string nCTLamthemID, float nSogiolamthem, int nThang)
+        public bool update_CTLT(string nCTLamthemID, float nSogiolamthem, int nThang,string name)
         {
             var data = new CTLamthem(nCTLamthemID, nSogiolamthem, nThang);
+            data.tennv = name;
             FirebaseResponse rep = DB_connect.client.Update(db_path + nCTLamthemID, data);
             CTLamthem result = rep.ResultAs<CTLamthem>();
             if (result != null) return true;
@@ -45,7 +46,15 @@ namespace DAL
             }
             else return false;
         }
-
+        public bool add_tennv(string nTennv, string nCTlamthemID)
+        {
+            CTLamthem data = get_CTLT(nCTlamthemID);
+            data.tennv = nTennv;
+            FirebaseResponse rep = DB_connect.client.Update(db_path + nCTlamthemID, data);
+            CTLamthem result = rep.ResultAs<CTLamthem>();
+            if (result != null) return true;
+            else return false;
+        }
         public List<CTLamthem> getall_CTLT()
         {
             List<CTLamthem> list = new List<CTLamthem>();

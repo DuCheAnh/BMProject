@@ -13,6 +13,7 @@
         WindowStartupLocation="CenterScreen"
         Title="NewMW" Height="720" Width="1280"
         Background="LightGray"
+        WindowStyle="SingleBorderWindow"
         Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>

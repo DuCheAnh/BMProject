@@ -23,7 +23,7 @@ namespace BusinessManagement
 
         private void btnThemMH_Click(object sender, RoutedEventArgs e)
         {
-            if (user_bus.add_new_HH(tbTenMH.Text, cbNCC.Text, tbDVT.Text, cbNhomMH.Text, long.Parse(tbDonGia.Text)))
+            if (user_bus.add_new_HH(tbMahang.Text,tbTenMH.Text, cbNCC.Text, tbDVT.Text, cbNhomMH.Text, long.Parse(tbDonGia.Text)))
                 MessageBox.Show("Thêm thành công");
             else MessageBox.Show("Thêm thất bại");
 

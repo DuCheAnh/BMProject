@@ -1,7 +1,7 @@
 ﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.Windows;
-using System;
 namespace BusinessManagement
 {
     /// <summary>
@@ -31,12 +31,12 @@ namespace BusinessManagement
         {
             string mh_string = null;
             string sl_string = null;
-            foreach(ThemMoreMH mh in ThemMH.Children)
+            foreach (ThemMoreMH mh in ThemMH.Children)
             {
-                mh_string += mh.getMaMH() + "-";
-                sl_string += mh.getSL()+"-";
+                mh_string += mh.getMaMH() + "/";
+                sl_string += mh.getSL() + "/";
             }
-            user_bus.add_new_dh(DateTime.Now.Ticks.ToString(), mh_string, DateTime.Now.ToString(), sl_string, MaKH.Text);
+            user_bus.add_new_dh("DH"+user_bus.new_DonhangID().ToString(), mh_string, DateTime.Now.ToString(), sl_string, MaKH.Text);
         }
     }
 }

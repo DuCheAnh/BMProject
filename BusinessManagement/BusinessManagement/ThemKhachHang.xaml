@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         FontSize="16"
         WindowStartupLocation="CenterOwner"
-        FontFamily="Tahoma"
-        Title="Thêm khách hàng" Height="250" Width="600">
+        FontFamily="Roboto"
+        Title="Thêm khách hàng" Height="250" Width="600"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="191*"/>
@@ -17,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Grid>
             <StackPanel>
-                <Label Content="Họ Tên:" Margin="20 20 20 0 " HorizontalContentAlignment="Right"/>
+                <Label  Content="Họ Tên:" Margin="20 20 20 0 " HorizontalContentAlignment="Right"/>
                 <Label Content="SĐT" Margin="20 20 20 0" HorizontalAlignment="Right"/>
                 <Label Content="Địa Chỉ:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
             </StackPanel>
@@ -27,7 +28,9 @@
                 <TextBox Margin="0 20 20 0" x:Name="HoTen"/>
                 <TextBox Margin="0 19 20 0" x:Name="SDT"/>
                 <TextBox Margin="0 19 20 0" x:Name="DiaChi"/>
-                <Button Height="40" Margin="180,20,20,20" Background="DarkBlue" BorderBrush="DarkBlue" FontSize="20" Content="Thêm khách hàng" x:Name="btnThemKH" Click="btnThemKH_Click"/>
+                <Button Height="40" Margin="180,20,20,20" Background="#FF12599E" 
+                        FontWeight="Light"
+                        BorderBrush="#FF12599E" FontSize="20" Content="Thêm khách hàng" x:Name="btnThemKH" Click="btnThemKH_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

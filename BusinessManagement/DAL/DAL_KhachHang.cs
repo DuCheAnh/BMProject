@@ -62,5 +62,13 @@ namespace DAL
             }
             else return null;
         }
+        public int new_KhachHangID()
+        {
+            var rep = DB_connect.client.Get("Counter/KHCounter");
+            NumberCounter data = rep.ResultAs<NumberCounter>();
+            data.value += 1;
+            SetResponse res = DB_connect.client.Set("Counter/KHCounter", data);
+            return data.value;
+        }
     }
 }

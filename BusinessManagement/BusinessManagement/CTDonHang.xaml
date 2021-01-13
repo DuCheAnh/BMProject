@@ -20,18 +20,22 @@
                 <ListView Width="860"
                           TextElement.FontSize="20"
                           HorizontalAlignment="Left"
-                          Margin="10 10 10 10">
+                          Margin="10 10 10 10" Name="ctdhLV">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="200"
-                                            Header="Mã Sản Phẩm"/>
+                                            Header="Mã Sản Phẩm"
+                                            DisplayMemberBinding="{Binding HanghoaID}"/>
                             <GridViewColumn Width="280"
-                                            Header="Tên Sản Phẩm"/>
+                                            Header="Tên Sản Phẩm"
+                                            DisplayMemberBinding="{Binding tenhh}"/>
                             <GridViewColumn Width="160"
-                                            Header="Số Lượng">
+                                            Header="Số Lượng"
+                                            DisplayMemberBinding="{Binding soluong}">
                             </GridViewColumn>
                             <GridViewColumn Width="220"
-                                            Header="Giá Tiền">
+                                            Header="Giá Tiền"
+                                            DisplayMemberBinding="{Binding giaca}">
 
                             </GridViewColumn>
                         </GridView>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         FontSize="16"
         FontFamily="Tahoma"
-        Title="ThemNVMoi" Height="700" Width="600"
+        Title="ThemNVMoi" Height="830" Width="600"
         Loaded="Window_Loaded"
         WindowStartupLocation="CenterOwner">
     <Grid>
@@ -32,6 +32,7 @@
                 <Label Content="Thời gian hợp đồng:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Trình độ:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Phòng ban:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
+                <Label Content="Lương thỏa thuận:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="2">
@@ -74,18 +75,25 @@
                     <ComboBoxItem Content="Cao đẳng"/>
                     <ComboBoxItem Content="Đại học"/>
                 </ComboBox>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                    <ComboBox x:Name="PBcombobox" Margin="10" Width="150" Height="30"
-                              Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                        
+                
+                    <ComboBox x:Name="PBcombobox" Margin="0 19 20 0" Width="auto" Height="35"
+                              Padding="0"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                              FontSize="18" FontWeight="Bold">
+                              
                     </ComboBox>
-                    <Button Grid.Column="1"
-                    x:Name="btnThemNV" Height="50" Margin="30,5,20.4,0" FontSize="20" Content="Thêm nhân viên" Click="btnThemNV_Click" Background="DarkBlue" BorderBrush="DarkBlue"/>
-                </Grid>
+                    
+
+                
+                <TextBox Margin="0 15 20 0" x:Name="Luongthoathuan" Height="35"/>
+                <Button 
+                    
+                    x:Name="btnThemNV" Height="50" 
+                    Margin="160 10 0 0" FontSize="20" 
+                    Content="Thêm nhân viên" 
+                        Click="btnThemNV_Click" 
+                    Width="200"
+                        Background="DarkBlue" BorderBrush="DarkBlue"/>
             </StackPanel>
         </Grid>
     </Grid>

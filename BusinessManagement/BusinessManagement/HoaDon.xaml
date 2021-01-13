@@ -57,25 +57,33 @@
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
-                <ListView TextElement.FontSize="16">
+                <ListView TextElement.FontSize="16" x:Name="Hoadonlistview">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Width="180"
-                                            Header="Mã Hóa Đơn">
+                            <GridViewColumn Width="120"
+                                            Header="Mã HĐ" 
+                                            DisplayMemberBinding="{Binding HoadonID}">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Mã Nhân Viên">
+                                            Header="Tên Nhân Viên"
+                                            DisplayMemberBinding="{Binding tennv}">
                             </GridViewColumn>
-                            <GridViewColumn Width="180"
-                                            Header="Mã Đơn Hàng">
+                            <GridViewColumn Width="120"
+                                            Header="Mã ĐH"
+                                            DisplayMemberBinding="{Binding DonhangID}">
                             </GridViewColumn>
-                            <GridViewColumn Width="180"
-                                            Header="Ngày Lập HĐ">
+                            <GridViewColumn Width="160"
+                                            Header="Ngày Lập"
+                                            DisplayMemberBinding="{Binding ngaylap}">
                             </GridViewColumn>
-                            <GridViewColumn Width="180"
-                                            Header="Ngày Xuất HĐ">
-
+                            <GridViewColumn Width="160"
+                                            Header="Ngày Xuất"
+                                            DisplayMemberBinding="{Binding ngayxuat}">
                             </GridViewColumn>
+                                <GridViewColumn Width="180" Header="Trị giá"
+                                                DisplayMemberBinding="{Binding trigia}">
+                                    
+                                </GridViewColumn>
                         </GridView>
                     </ListView.View>
                 </ListView>

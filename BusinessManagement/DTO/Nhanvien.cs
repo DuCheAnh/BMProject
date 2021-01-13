@@ -1,4 +1,4 @@
-﻿    namespace DTO
+﻿namespace DTO
 {
     public class Nhanvien
     {
@@ -17,6 +17,7 @@
         public string diachi { get; set; }
         public string trinhdo { get; set; }
         public string PBID { get; set; }
+        public int ngaylamviec { get; set; }
         public Nhanvien()
         {
         }
@@ -33,7 +34,7 @@
         /// <param name="nCTKyketID"></param>
         /// <param name="nDSKinangID"></param>
         public Nhanvien(string nNVID, string nType, string nTennv, string nEmail, string nNgaysinh, string nGioitinh,
-            string nNoisinh, string nDiachi, string nTrinhdo,string nPBID, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
+            string nNoisinh, string nDiachi, string nTrinhdo, string nPBID, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
         {
             NVID = nNVID;
             type = nType;

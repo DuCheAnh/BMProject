@@ -5,10 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BusinessManagement"
              mc:Ignorable="d" 
-             FontFamily="Tahoma"
+             FontFamily="Roboto"
              FontSize="24"
              d:DesignHeight="590" d:DesignWidth="1170"
-             Loaded="UserControl_Loaded">
+             Loaded="UserControl_Loaded"
+             ScrollViewer.VerticalScrollBarVisibility="Disabled">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1160"></ColumnDefinition>
@@ -19,7 +20,7 @@
                           HorizontalScrollBarVisibility="Disabled"
                           Height="auto"
                           Width="1160"
-                          CanContentScroll="True">
+                          CanContentScroll="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="200"></ColumnDefinition>
@@ -27,68 +28,49 @@
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <StackPanel>
-                            <Label Content="Họ Tên" FontSize="40" Margin="20 50 0 0"/>
+                            <Label Content="Họ Tên" FontSize="30" Margin="20 50 0 0"/>
                             <Label Content="Mã NV"  Margin="20 20 0 0"/>
                             <Label Content="Ngày Sinh"  Margin="20 20 0 0"/>
                             <Label Content="Giới tính"  Margin="20 20 0 0"/>
                             <Label Content="Nơi Sinh"  Margin="20 20 0 0"/>
                             <Label Content="Địa Chỉ"  Margin="20 20 0 0"/>
                             <Label Content="Trình độ"  Margin="20 20 0 0"/>
+                            <Label 
+                           Content="Phòng ban"
+                           Margin="20 20 0 0" Grid.Column="0"/>
+                            <Label Content="Lương dự tính" Margin="20 20 0 0"/>
                         </StackPanel>
 
-
+                        
                     </Grid>
                     <Grid Grid.Column="1">
                         <StackPanel>
                             <Label x:Name="lbTenNV"
-                           FontSize="40"
-                           Content="Nguyễn Văn A"
+                           FontSize="30"
+                           Content="{Binding tennv}"
                            Margin="20 50 0 0"/>
                             <Label x:Name="lbMaNV"
-                           Content="1852013"
+                           Content="{Binding NVID}"
                            Margin="20 20 0 0"/>
                             <Label x:Name="lbNgaySinh"
-                           Content="21/10/2000"
+                           Content="{Binding ngaysinh}"
                            Margin="20 20 0 0"/>
                             <Label x:Name="lbGioiTinh"
-                           Content="Nam"
+                           Content="{Binding gioitinh}"
                            Margin="20 20 0 0"/>
                             <Label x:Name="lbNoiSinh"
-                           Content="BMT"
+                           Content="{Binding noisinh}"
                            Margin="20 20 0 0"/>
                             <Label x:Name="lbDiaChi"
-                           Content="Dia Chi"
+                           Content="{Binding diachi}"
                            Margin="20 20 0 0"/>
                             <Label x:Name="lbTrinhDo"
-                           Content="TrinhDo"
+                           Content="{Binding trinhdo}"
                            Margin="20 20 0 0"/>
-                            <ListView Width="720" TextElement.FontSize="24">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Width="240"
-                                                Header="Chức Vụ"/>
-                                        <GridViewColumn Width="240"
-                                                Header="Ngày Bắt Đầu"/>
-                                        <GridViewColumn Width="240"
-                                                Header="Ngày Kết Thúc"/>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                            <Label x:Name="lbPhongBan"
-                           Content="Phòng ban hiện tại"
-                           Margin="20 20 0 0"/>
-                            <ListView Width="720" TextElement.FontSize="24">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Width="280"
-                                                Header="Kỹ Năng"/>
-                                        <GridViewColumn Width="200"
-                                                Header="Mức Độ"/>
-                                        <GridViewColumn Width="240"
-                                                Header="Ngày Đánh Giá"/>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
+                            <Label x:Name="lbPhongBan" Content="{Binding PBID}"
+                                   Margin="20 20 0 0"/>
+
+                            
                             <Button x:Name="btnDanhGia"
                     Width="210" Height="50"
                     HorizontalAlignment="Right"

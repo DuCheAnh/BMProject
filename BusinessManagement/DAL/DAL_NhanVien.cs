@@ -1,6 +1,7 @@
 ﻿using DTO;
 using FireSharp.Response;
 using System.Collections.Generic;
+using System;
 namespace DAL
 {
     public class DAL_NhanVien
@@ -27,7 +28,11 @@ namespace DAL
             if (result != null) return true;
             else return false;
         }
-
+        public void add_ngaylamviec(Nhanvien nhanvien, int ngay)
+        {
+            nhanvien.ngaylamviec += ngay;
+            FirebaseResponse rep = DB_connect.client.Update(db_path + nhanvien.NVID, nhanvien);
+        }
         public Nhanvien get_NV(string nNVID)
         {
             var rep = DB_connect.client.Get(db_path + nNVID);

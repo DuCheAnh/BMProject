@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BUS;
+using DTO;
 namespace BusinessManagement
 {
     /// <summary>
@@ -20,9 +21,18 @@ namespace BusinessManagement
     /// </summary>
     public partial class QLNgayGio : UserControl
     {
+        BUS_USER user_bus = new BUS_USER();
         public QLNgayGio()
         {
             InitializeComponent();
+            lamthemlistview.ItemsSource = user_bus.get_allctlt();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CapnhatLamthem inst = new CapnhatLamthem();
+            inst.init_data((CTLamthem)lamthemlistview.SelectedItems[0]);
+            inst.Show();
         }
     }
 }

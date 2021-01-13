@@ -33,5 +33,18 @@ namespace BusinessManagement
             ThemKhachHang them = new ThemKhachHang();
             them.Show();
         }
+        private void listview_filter(string keyword)
+        {
+            KHListview.ItemsSource = user_bus.getallKH().Where(khi => khi.tenkh.ToLower().Contains(keyword.ToLower()) ||
+                  khi.sdt.Contains(keyword) || khi.KhachhangID.ToLower().Contains(keyword.ToLower()) 
+                  || khi.diachi.ToLower().Contains(keyword.ToLower()));
+        }
+        private void ListViewSearchBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Enter)
+            {
+                listview_filter(ListViewSearchBar.Text);
+            }
+        }
     }
 }
