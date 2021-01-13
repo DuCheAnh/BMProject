@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using DTO;
+using BUS;
 namespace BusinessManagement
 {
     /// <summary>
@@ -23,6 +24,10 @@ namespace BusinessManagement
         public PhongBan()
         {
             InitializeComponent();
+        }
+        public void initPhongbanpage(PBData data)
+        {
+            PBnameTB.Text = data.tenpb;
         }
         private void btnThongKe_Click(object sender, RoutedEventArgs e)
         {

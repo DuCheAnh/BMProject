@@ -6,7 +6,7 @@ namespace DAL
     public class DAL_CTGiaCa
     {
         string db_path = "CTGiaCa/";
-        public bool add_CTGiaCa(string nCTGiacaID, string nGiaca, string nNgayUpdate)
+        public bool add_CTGiaCa(string nCTGiacaID, long nGiaca, string nNgayUpdate)
         {
             var data = new CTGiaca(nCTGiacaID, nGiaca, nNgayUpdate);
             SetResponse rep = DB_connect.client.Set(db_path + nCTGiacaID, data);
@@ -15,7 +15,7 @@ namespace DAL
             else return false;
         }
 
-        public bool update_CTGiaCa(string nCTGiacaID, string nGiaca, string nNgayUpdate)
+        public bool update_CTGiaCa(string nCTGiacaID, long nGiaca, string nNgayUpdate)
         {
             var data = new CTGiaca(nCTGiacaID, nGiaca, nNgayUpdate);
             FirebaseResponse rep = DB_connect.client.Update(db_path + nCTGiacaID, data);

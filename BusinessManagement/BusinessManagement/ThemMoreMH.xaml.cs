@@ -29,8 +29,16 @@ namespace BusinessManagement
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> list = user_bus.getallMH();
+            List<string> list = user_bus.getallMH_ID();
             MaMH.ItemsSource = list;
+        }
+        public string getMaMH()
+        {
+            return MaMH.Text;
+        }
+        public string getSL()
+        {
+            return SoLuong.Text;
         }
     }
 }

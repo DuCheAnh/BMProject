@@ -58,20 +58,24 @@
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
-                <ListView TextElement.FontSize="16">
+                <ListView TextElement.FontSize="16" x:Name="KHListview">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="180"
-                                            Header="Mã Khách Hàng">
+                                            Header="Mã Khách Hàng"
+                                            DisplayMemberBinding="{Binding KhachhangID}">
                             </GridViewColumn>
                             <GridViewColumn Width="320"
-                                            Header="Tên Khách Hàng">
+                                            Header="Tên Khách Hàng"
+                                            DisplayMemberBinding="{Binding tenkh}">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="SĐT">
+                                            Header="SĐT"
+                                            DisplayMemberBinding="{Binding sdt}">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Địa Chỉ">
+                                            Header="Địa Chỉ"
+                                            DisplayMemberBinding="{Binding diachi}">
 
                             </GridViewColumn>
                         </GridView>

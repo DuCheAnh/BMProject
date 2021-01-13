@@ -18,7 +18,7 @@
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
                       Width="300"></ComboBox>
             <Button x:Name="btnThemMH" Canvas.Top="20" Canvas.Left="400" Height="40" Width="160" Click="btnThemMH_Click" Background="DarkBlue" BorderBrush="DarkBlue">Thêm mặt hàng</Button>
-            <Button Canvas.Bottom="20" Canvas.Right="20" Width="180" Height="50" Background="DarkBlue" BorderBrush="DarkBlue">Thêm Đơn Hàng</Button>
+            <Button x:Name="themdhbtn" Canvas.Bottom="20" Canvas.Right="20" Width="180" Height="50" Background="DarkBlue" BorderBrush="DarkBlue" Click="Button_Click">Thêm Đơn Hàng</Button>
             <ScrollViewer Canvas.Left="20" Canvas.Top="100"
                     Width="560" Height="480">
                 <StackPanel x:Name="ThemMH">

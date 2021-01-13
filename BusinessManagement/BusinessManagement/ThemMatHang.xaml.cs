@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using BUS;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
-using BUS;
-using DTO;
 
 
 namespace BusinessManagement
@@ -25,7 +23,7 @@ namespace BusinessManagement
 
         private void btnThemMH_Click(object sender, RoutedEventArgs e)
         {
-            if (user_bus.add_new_HH(tbTenMH.Text,cbNCC.Text,tbDVT.Text,cbNhomMH.Text,tbDonGia.Text))
+            if (user_bus.add_new_HH(tbTenMH.Text, cbNCC.Text, tbDVT.Text, cbNhomMH.Text, long.Parse(tbDonGia.Text)))
                 MessageBox.Show("Thêm thành công");
             else MessageBox.Show("Thêm thất bại");
 
@@ -33,7 +31,7 @@ namespace BusinessManagement
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> listcc = user_bus.getallNCC();
+            List<string> listcc = user_bus.getallNCC_ID();
             cbNCC.ItemsSource = listcc;
         }
     }

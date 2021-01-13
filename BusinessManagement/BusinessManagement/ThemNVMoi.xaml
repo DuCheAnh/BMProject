@@ -22,6 +22,7 @@
                 <Label Content="Mã NV:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Tên tài khoản:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Mật khẩu:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
+                <Label Content="Email:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Ngày Sinh:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Giới tính:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Nơi Sinh:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
@@ -30,6 +31,7 @@
                 <Label Content="Loại hợp đồng:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Thời gian hợp đồng:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
                 <Label Content="Trình độ:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
+                <Label Content="Phòng ban:"  Margin="20 20 20 0" HorizontalContentAlignment="Right"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="2">
@@ -38,6 +40,7 @@
                 <TextBox Margin="0 19 20 0" x:Name="MaNV"/>
                 <TextBox Margin="0 19 20 0" x:Name="Username"/>
                 <PasswordBox Margin="0 19 20 0" x:Name="Password"/>
+                <TextBox Margin="0 19 20 0" x:Name="Email"/>
                 <DatePicker Margin="0 19 20 0" x:Name="DOB"/>
                 <ComboBox Canvas.Left="20" Canvas.Top="20" x:Name="Gender"
                       FontSize="18" FontWeight="Bold"
@@ -71,7 +74,18 @@
                     <ComboBoxItem Content="Cao đẳng"/>
                     <ComboBoxItem Content="Đại học"/>
                 </ComboBox>
-                <Button x:Name="btnThemNV" Height="50" Margin="180,10,20,0" FontSize="20" Content="Thêm nhân viên" Click="btnThemNV_Click" Background="DarkBlue" BorderBrush="DarkBlue"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="PBcombobox" Margin="10" Width="150" Height="30"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        
+                    </ComboBox>
+                    <Button Grid.Column="1"
+                    x:Name="btnThemNV" Height="50" Margin="30,5,20.4,0" FontSize="20" Content="Thêm nhân viên" Click="btnThemNV_Click" Background="DarkBlue" BorderBrush="DarkBlue"/>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>

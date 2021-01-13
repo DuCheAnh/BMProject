@@ -1,17 +1,6 @@
-﻿using System;
+﻿using BUS;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using BUS;
 
 namespace BusinessManagement
 {
@@ -29,14 +18,14 @@ namespace BusinessManagement
         private void btnThemNV_Click(object sender, RoutedEventArgs e)
         {
             if (user_bus.add_new_nv(HoTen.Text, MaNV.Text, Username.Text, Password.Password, DOB.SelectedDate.ToString(),
-                Gender.Text, BirthPlace.Text, Address.Text, Position.Text, HopDong.Text, HDtill.SelectedDate.ToString(), TrinhDo.Text, "PB01"))
+                Gender.Text, BirthPlace.Text, Address.Text, Position.Text, HopDong.Text, HDtill.SelectedDate.ToString(), TrinhDo.Text, PBcombobox.Text,Email.Text))
                 MessageBox.Show("Thêm thành công");
             else MessageBox.Show("Thêm thất bại");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> listHD = user_bus.getallHD();
+            List<string> listHD = user_bus.getallHD_ID();
             HopDong.ItemsSource = listHD;
         }
     }

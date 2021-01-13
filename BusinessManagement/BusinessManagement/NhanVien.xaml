@@ -58,20 +58,30 @@
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
-                <ListView TextElement.FontSize="16">
+                <ListView TextElement.FontSize="16" x:Name="NVListview"
+                          MouseDoubleClick="NVListview_MouseDoubleClick">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="180"
-                                            Header="Mã Nhân Viên">
+                                            Header="Mã Nhân Viên"
+                                            DisplayMemberBinding="{Binding NVID}">
                             </GridViewColumn>
-                            <GridViewColumn Width="320"
-                                            Header="Tên Nhân Viên">
+                            <GridViewColumn Width="250"
+                                            Header="Tên Nhân Viên"
+                                            DisplayMemberBinding="{Binding tennv}">
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="SĐT">
+                                            Header="Email"
+                                            DisplayMemberBinding="{Binding email}">
+                            </GridViewColumn>
+                            <GridViewColumn Width="150"
+                                            Header="Giới tính"
+                                            DisplayMemberBinding="{Binding gioitinh}">
+
                             </GridViewColumn>
                             <GridViewColumn Width="180"
-                                            Header="Địa Chỉ">
+                                            Header="Địa Chỉ"
+                                            DisplayMemberBinding="{Binding diachi}">
 
                             </GridViewColumn>
                         </GridView>

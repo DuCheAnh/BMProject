@@ -12,7 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BUS;
+using DTO;
 namespace BusinessManagement
 {
     /// <summary>
@@ -25,6 +26,7 @@ namespace BusinessManagement
             InitializeComponent();
         }
 
+        
         private void bntThemDH_Click(object sender, RoutedEventArgs e)
         {
             ThemDonHang them = new ThemDonHang();

@@ -62,6 +62,7 @@
     <Compile Include="Donhang.cs" />
     <Compile Include="DSKynang.cs" />
     <Compile Include="Hanghoa.cs" />
+    <Compile Include="HanghoaLV.cs" />
     <Compile Include="Hoadon.cs" />
     <Compile Include="Hopdong.cs" />
     <Compile Include="Khachhang.cs" />

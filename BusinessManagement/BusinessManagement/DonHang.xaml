@@ -59,7 +59,7 @@
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
-                <ListView TextElement.FontSize="16">
+                <ListView TextElement.FontSize="16" x:Name="DonhangLV">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="180"

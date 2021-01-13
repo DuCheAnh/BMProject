@@ -104,6 +104,18 @@
                                                  Opacity="0.8"
                                                  />
                     </Button>
+                    <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
+                            Height="55"
+                            Click="btnPhongBan_Click"
+                            ToolTip="Phòng ban">
+                        <materialDesign:PackIcon Kind="Briefcase" Width="40" Height="40" 
+                                                 VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                 Foreground="DarkBlue"
+                                                 Background="Transparent"
+                                                 Margin="0"
+                                                 Opacity="0.8"
+                                                 />
+                    </Button>
                 </StackPanel>
             </Grid>
         </Border>

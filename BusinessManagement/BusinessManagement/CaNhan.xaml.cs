@@ -10,6 +10,9 @@ namespace BusinessManagement
         public CaNhan()
         {
             InitializeComponent();
+            User_info_load(BUS.CurrentUser.nhanvien.tennv, BUS.CurrentUser.nhanvien.NVID, BUS.CurrentUser.nhanvien.ngaysinh
+                , BUS.CurrentUser.nhanvien.gioitinh, BUS.CurrentUser.nhanvien.noisinh, BUS.CurrentUser.nhanvien.diachi,
+                BUS.CurrentUser.nhanvien.trinhdo, BUS.CurrentUser.user.PBID);
         }
         private void User_info_load(string nTennv, string nManv, string nNgaysinh, string nGioitinh, string nNoisinh,
                                     string nDiachi, string nTrinhdo, string nPBhientai)
@@ -25,14 +28,6 @@ namespace BusinessManagement
         }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            lbTenNV.Content = BUS.CurrentUser.nhanvien.tennv;
-            lbMaNV.Content = BUS.CurrentUser.nhanvien.NVID;
-            lbNgaySinh.Content = BUS.CurrentUser.nhanvien.ngaysinh;
-            lbGioiTinh.Content = BUS.CurrentUser.nhanvien.gioitinh;
-            lbNoiSinh.Content = BUS.CurrentUser.nhanvien.noisinh;
-            lbDiaChi.Content = BUS.CurrentUser.nhanvien.diachi;
-            lbTrinhDo.Content = BUS.CurrentUser.nhanvien.trinhdo;
-            lbPhongBan.Content = BUS.CurrentUser.user.PBID;
             
         }
     }

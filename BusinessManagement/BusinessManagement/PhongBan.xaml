@@ -13,7 +13,7 @@
             <RowDefinition Height="7*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock FontSize="20" Margin="10,10,0,10" HorizontalAlignment="Left" Width="250">Phòng kinh doanh</TextBlock>
+        <TextBlock FontSize="20" Margin="10,10,0,10" HorizontalAlignment="Left" Width="250" x:Name="PBnameTB"> </TextBlock>
         <TextBlock FontSize="20" Margin="0,10,10,10" HorizontalAlignment="Right" Width="150">Số nhân viên:</TextBlock>
         <Grid Grid.Row="1" Grid.RowSpan="1">
             <ScrollViewer Margin="50,10,50,10">

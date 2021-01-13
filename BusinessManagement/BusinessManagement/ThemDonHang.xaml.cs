@@ -1,18 +1,7 @@
-﻿using System;
+﻿using BUS;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using BUS;
-
+using System;
 namespace BusinessManagement
 {
     /// <summary>
@@ -28,7 +17,7 @@ namespace BusinessManagement
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<string> list = user_bus.getallKH();
+            List<string> list = user_bus.getallKH_ID();
             MaKH.ItemsSource = list;
         }
 
@@ -36,6 +25,18 @@ namespace BusinessManagement
         {
             ThemMoreMH mh = new ThemMoreMH();
             ThemMH.Children.Add(mh);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string mh_string = null;
+            string sl_string = null;
+            foreach(ThemMoreMH mh in ThemMH.Children)
+            {
+                mh_string += mh.getMaMH() + "-";
+                sl_string += mh.getSL()+"-";
+            }
+            user_bus.add_new_dh(DateTime.Now.Ticks.ToString(), mh_string, DateTime.Now.ToString(), sl_string, MaKH.Text);
         }
     }
 }

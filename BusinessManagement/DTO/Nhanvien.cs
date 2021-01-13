@@ -16,6 +16,7 @@
         public string noisinh { get; set; }
         public string diachi { get; set; }
         public string trinhdo { get; set; }
+        public string PBID { get; set; }
         public Nhanvien()
         {
         }
@@ -32,7 +33,7 @@
         /// <param name="nCTKyketID"></param>
         /// <param name="nDSKinangID"></param>
         public Nhanvien(string nNVID, string nType, string nTennv, string nEmail, string nNgaysinh, string nGioitinh,
-            string nNoisinh, string nDiachi, string nTrinhdo, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
+            string nNoisinh, string nDiachi, string nTrinhdo,string nPBID, string nCTChucvuID, string nCTLamthemID, string nCTThuongID, string nCTKyketID, string nDSKinangID)
         {
             NVID = nNVID;
             type = nType;
@@ -43,6 +44,7 @@
             noisinh = nNoisinh;
             diachi = nDiachi;
             trinhdo = nTrinhdo;
+            PBID = nPBID;
             CTChucvuID = nCTChucvuID;
             CTLamthemID = nCTLamthemID;
             CTThuongID = nCTThuongID;

@@ -18,6 +18,8 @@ namespace BUS
         DAL_KhachHang khachHang_func = new DAL_KhachHang();
         DAL_HangHoa hanghoa_func = new DAL_HangHoa();
         DAL_CTGiaCa giaca_func = new DAL_CTGiaCa();
+        DAL_PB pb_func = new DAL_PB();
+        DAL_DonHang donhang_func = new DAL_DonHang();
         List<string> random = new List<string>();
 
         public UserData get_user_from_id(string nUid)
@@ -41,7 +43,7 @@ namespace BUS
         }
 
 
-        public List<string> getallNCC()
+        public List<string> getallNCC_ID()
         {
             DAL_NhaCC nhacc_func = new DAL_NhaCC();
             //List<Nhacc> list = nhacc_func.getall_NhaCC();
@@ -57,7 +59,7 @@ namespace BUS
             return null;
         }
 
-        public List<string> getallKH()
+        public List<string> getallKH_ID()
         {
             DAL_KhachHang khach_funcc = new DAL_KhachHang();
             List<string> list = new List<string>();
@@ -70,19 +72,23 @@ namespace BUS
             return null;
         }
 
-        public List<string> getallHD()
+        public List<string> getallHD_ID()
         {
             DAL_HopDong hd_funcc = new DAL_HopDong();
             List<string> list = new List<string>();
             foreach (Hopdong data in hd_funcc.getall_HopDong())
             {
-                list.Add(data.tenhopdong);
+                list.Add(data.HopdongID);
             }
             if (list != null)
                 return list;
             return null;
         }
-        public List<string> getallMH()
+        public bool add_new_dh(string nDonhangID, string nHanghoaID, string nNgaythem, string nSoluong, string nKhachhangID)
+        {
+            return donhang_func.add_DonHang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID);
+        }
+        public List<string> getallMH_ID()
         {
             DAL_HangHoa hh_funcc = new DAL_HangHoa();
             List<string> list = new List<string>();
@@ -95,9 +101,49 @@ namespace BUS
             return null;
         }
 
+        public List<Hanghoa> getallMH()
+        {
+            return hanghoa_func.getall_HangHoa();
+        }
+        public CTGiaca getCTGiaca(string nCTGiacaID)
+        {
+            return giaca_func.get_CTGiaCa(nCTGiacaID);
+        }
+        public List<HanghoaLV> get_listof_hanghoalv()
+        {
+            List<HanghoaLV> list = new List<HanghoaLV>();
+            foreach (Hanghoa data in hanghoa_func.getall_HangHoa())
+            {
+                HanghoaLV item = new HanghoaLV();
+                item.HanghoaID = data.HanghoaID;
+                item.tenhh = data.tenhh;
+                item.nhomhang = data.nhomhang;
+                item.dvt = data.dvt;
+                item.nhacc = nhacc_func.get_NhaCC(data.NhaccID).tennhacc;
+                item.giatien = giaca_func.get_CTGiaCa(data.CTGiacaID).giaca;
+                list.Add(item);
+            }
+            return list;
+        }
+        public List<Khachhang> getallKH()
+        {
+            return khachHang_func.getall_KhachHang();
+        }
 
+        public List<Nhanvien> getallNV()
+        {
+            return nhanvien_func.getall_NV();
+        }
+        public PBData getpb(string nPBID)
+        {
+            return pb_func.get_PB(nPBID);
+        }
+        public List<PBData> getallPB()
+        {
+            return pb_func.getall_PB();
+        }
         public bool add_new_nv(string sName, string sNVID, string sUsername, string sPassword, string sDOB, string sGioitinh
-           , string sNoisinh, string sDiachi, string sCVtype, string sHopDongID, string sTGKyket, string sTrinhdo, string sPBID)
+           , string sNoisinh, string sDiachi, string sCVtype, string sHopDongID, string sTGKyket, string sTrinhdo, string sPBID, string sEmail)
         {
             foreach (Nhanvien data in nhanvien_func.getall_NV())
             {
@@ -137,7 +183,7 @@ namespace BUS
             string ngaydanhgia = "none";
             dskynang_func.add_DSKyNang(nDSKynangID, tenkn, mucdo, ngaydanhgia);
             //them nhan vien vao DB
-            nhanvien_func.add_NV(sNVID, sCVtype, sName, "none@", sDOB, sGioitinh, sNoisinh, sDiachi, sTrinhdo, nCTCVID, nCTLamthemID, nCTThuongID,
+            nhanvien_func.add_NV(sNVID, sCVtype, sName, sEmail, sDOB, sGioitinh, sNoisinh, sDiachi, sTrinhdo, sPBID, nCTCVID, nCTLamthemID, nCTThuongID,
                 nKyketID, nDSKynangID);
             return true;
         }
@@ -156,13 +202,13 @@ namespace BUS
             khachHang_func.add_KhachHang(KHID, sName, sSDT, sDiacChi);
             return true;
         }
-        public bool add_new_HH(string sName, string sNCC, string sDVT, string sNhomMN, string sGia)
+        public bool add_new_HH(string sName, string sNCC, string sDVT, string sNhomMN, long sGia)
         {
             string sID = sNhomMN + "-" + sNCC + "-" + sName;
             string sIDDT = DateTime.Now.Ticks.ToString();
             foreach (Hanghoa data in hanghoa_func.getall_HangHoa())
             {
-                if ( sID== data.HanghoaID) return false;
+                if (sID == data.HanghoaID) return false;
             }
             hanghoa_func.add_HangHoa(sID, sName, sNhomMN, sDVT, sNCC, sIDDT);
             string sNgay = DateTime.Now.ToString();

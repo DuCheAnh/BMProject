@@ -8,7 +8,8 @@
         FontFamily="Tahoma"
         FontSize="24"
         Title="Chi Tiết Nhân Viên"
-        d:DesignHeight="1000" d:DesignWidth="1000">
+        d:DesignHeight="1000" d:DesignWidth="1000"
+        MaxWidth="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1000"></ColumnDefinition>

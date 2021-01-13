@@ -137,6 +137,12 @@ namespace BusinessManagement
             spMain.Children.Add(pb);
         }
 
+        private void btnPhongBan_Click(object sender, RoutedEventArgs e)
+        {
+            spMain.Children.Clear();
+            DSPhongBan pb = new DSPhongBan();
+            spMain.Children.Add(pb);
+        }
         private void btnThemMatHang_Click(object sender, RoutedEventArgs e)
         {
             ThemMatHang them = new ThemMatHang();
@@ -148,7 +154,7 @@ namespace BusinessManagement
             ThemDienHD them = new ThemDienHD();
             them.Show();
         }
-
+       
         private void btnThemNhaCC_Click(object sender, RoutedEventArgs e)
         {
             ThemNCC them = new ThemNCC();

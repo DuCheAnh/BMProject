@@ -6,7 +6,7 @@ namespace DAL
     public class DAL_DonHang
     {
         string db_path = "DonHang/";
-        public bool add_DonHang(string nDonhangID, string nHanghoaID, string nNgaythem, int nSoluong, string nKhachhangID)
+        public bool add_DonHang(string nDonhangID, string nHanghoaID, string nNgaythem, string nSoluong, string nKhachhangID)
         {
             var data = new Donhang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID);
             SetResponse rep = DB_connect.client.Set(db_path + nDonhangID, data);
@@ -15,7 +15,7 @@ namespace DAL
             else return false;
         }
 
-        public bool update_DonHang(string nDonhangID, string nHanghoaID, string nNgaythem, int nSoluong, string nKhachhangID)
+        public bool update_DonHang(string nDonhangID, string nHanghoaID, string nNgaythem, string nSoluong, string nKhachhangID)
         {
             var data = new Donhang(nDonhangID, nHanghoaID, nNgaythem, nSoluong, nKhachhangID);
             FirebaseResponse rep = DB_connect.client.Update(db_path + nDonhangID, data);
