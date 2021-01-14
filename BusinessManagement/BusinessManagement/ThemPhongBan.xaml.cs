@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BUS;
+using DTO;
 
 namespace BusinessManagement
 {
@@ -19,6 +21,7 @@ namespace BusinessManagement
     /// </summary>
     public partial class ThemPhongBan : Window
     {
+        BUS_USER user_bus = new BUS_USER();
         public ThemPhongBan()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace BusinessManagement
 
         private void btnThemPB_Click(object sender, RoutedEventArgs e)
         {
+            user_bus.add_new_PB(tbMaPB.Text, tbTenPB.Text, tbSDTPB.Text, tbemailPB.Text, "", "");
         }
     }
 }

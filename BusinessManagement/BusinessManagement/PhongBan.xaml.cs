@@ -28,8 +28,23 @@ namespace BusinessManagement
         }
         public void initPhongbanpage(PBData data)
         {
+            List<NVPBforDisplay> list= new List<NVPBforDisplay>();
             PBnameTB.Text = data.tenpb;
-            NVPBListview.ItemsSource = user_bus.getallnv_fromPB(data);
+            
+            foreach(Nhanvien var in user_bus.getallnv_fromPB(data))
+            {
+                NVPBforDisplay inst = new NVPBforDisplay();
+                inst.tennv = var.tennv;
+                inst.manv = var.NVID;
+                inst.chucvu = var.type;
+                inst.luongnv = 0;
+                inst.luongnv+=user_bus.getkyket(var.CTKyketID).luongkyket;
+                inst.luongnv += Convert.ToInt64(user_bus.getctlamthem(var.CTLamthemID).sogiolamthem * 30000);
+                inst.luongnv += user_bus.getmucthuong_fromctt(var.CTThuongID).thuong;
+                inst.luongnv+=user_bus.getchucvu(user_bus.get_lastcv(var.CTChucvuID).ChucvuID).thuongchucvu;
+                list.Add(inst);
+            }
+            NVPBListview.ItemsSource = list;
             SonhanvienTB.Text+= NVPBListview.Items.Count;
         }
         private void btnThongKe_Click(object sender, RoutedEventArgs e)

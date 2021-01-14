@@ -41,6 +41,13 @@ namespace BusinessManagement
             PhongBan pb = new PhongBan();
             pb.initPhongbanpage(user_bus.getpb(labelist[0].Content.ToString()));
             PBdockpanel.Children.Add(pb);
+            addpbbtn.Visibility = Visibility.Hidden;
+        }
+
+        private void addpbbtn_Click(object sender, RoutedEventArgs e)
+        {
+            ThemPhongBan inst = new ThemPhongBan();
+            inst.Show();
         }
     }
 }

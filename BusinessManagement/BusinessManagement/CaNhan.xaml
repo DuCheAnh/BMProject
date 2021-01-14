@@ -38,10 +38,9 @@
                             <Label 
                            Content="Phòng ban"
                            Margin="20 20 0 0" Grid.Column="0"/>
-                            <Label Content="Lương dự tính" Margin="20 20 0 0"/>
                         </StackPanel>
 
-                        
+
                     </Grid>
                     <Grid Grid.Column="1">
                         <StackPanel>
@@ -70,15 +69,35 @@
                             <Label x:Name="lbPhongBan" Content="{Binding PBID}"
                                    Margin="20 20 0 0"/>
 
-                            
-                            <Button x:Name="btnDanhGia"
-                    Width="210" Height="50"
-                    HorizontalAlignment="Right"
-                                Margin="20 20 20 20"
-                                    Background="DarkBlue" Foreground="DarkBlue">
-                                <Label Content="Đánh Giá Kỹ Năng" Foreground="White" FontSize="16" FontWeight="Bold" BorderBrush="DarkBlue"></Label>
-                            </Button>
+
                         </StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="ctluongbtn" Content="Chi tiết lương" 
+                                        Width="200" Height="30" 
+                                    Click="ctluongbtn_Click" Grid.Column="0" 
+                                    HorizontalAlignment="Center"
+                                    Margin="30,513,30.8,47.4"/>
+                            <Button x:Name="btnCTCV" Click="btnCTCV_Click"
+                                    Width="200" Height="30"
+                                    Margin="30,513,30.8,47.4"
+                                    Background="DarkBlue" Foreground="DarkBlue" 
+                                    HorizontalAlignment="Center"
+                                    Grid.Column="1">
+                                <Label Content="Chi tiết chức vụ" Foreground="White" 
+                                           FontSize="14" FontWeight="Bold" 
+                                           BorderBrush="DarkBlue"/>
+                            </Button>
+                            <Button x:Name="ctkinangbtn" Content="Chi tiết kĩ năng" 
+                                        Width="200" Height="30" 
+                                    Click="ctkinangbtn_Click" Grid.Column="2" 
+                                    HorizontalAlignment="Center"
+                                    Margin="30,513,30.8,47.4"/>
+                        </Grid>
                     </Grid>
                 </Grid>
             </ScrollViewer>

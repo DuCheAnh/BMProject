@@ -26,6 +26,11 @@ namespace BusinessManagement
         {
             InitializeComponent();
             lamthemlistview.ItemsSource = user_bus.get_allctlt();
+            if (user_bus.get_lastcv(BUS.CurrentUser.nhanvien.CTChucvuID).ChucvuID=="QL")
+            {
+                tenpbtb.Text = user_bus.getpb(BUS.CurrentUser.nhanvien.PBID).tenpb;
+                sonvtb.Text = lamthemlistview.Items.Count.ToString();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

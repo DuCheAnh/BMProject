@@ -25,7 +25,12 @@ namespace BusinessManagement
         }
         private void init_listview()
         {
-            NVListview.ItemsSource = user_bus.getallNV();
+            if(user_bus.get_lastcv(CurrentUser.nhanvien.CTChucvuID).ChucvuID=="QL")
+            {
+                NVListview.ItemsSource = user_bus.getallNV().Where(nv=>nv.PBID==CurrentUser.nhanvien.PBID);
+            }
+            else
+                NVListview.ItemsSource = user_bus.getallNV();
         }
         private void filter_listview(string keyword)
         {

@@ -33,6 +33,7 @@ namespace DAL
             nhanvien.ngaylamviec += ngay;
             FirebaseResponse rep = DB_connect.client.Update(db_path + nhanvien.NVID, nhanvien);
         }
+
         public Nhanvien get_NV(string nNVID)
         {
             var rep = DB_connect.client.Get(db_path + nNVID);

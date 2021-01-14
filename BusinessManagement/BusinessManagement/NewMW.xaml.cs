@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BUS;
+using DTO;
 namespace BusinessManagement
 {
     /// <summary>
@@ -19,40 +20,47 @@ namespace BusinessManagement
     /// </summary>
     public partial class NewMW : Window
     {
+        bool loggingout = false;
+        BUS_USER user_bus = new BUS_USER();
         void NhanVienLogin()
         {
+            btnPb.Visibility = Visibility.Hidden;
             epQL.Visibility = Visibility.Collapsed;
         }
         void QuanLyLogin()
         {
-            btnXemYeuCau.Visibility = Visibility.Collapsed;
+            
             btnThemHopDong.Visibility = Visibility.Collapsed;
             btnThemMatHang.Visibility = Visibility.Collapsed;
             btnThemNhaCC.Visibility = Visibility.Collapsed;
         }
         void GiamDocLogin()
         {
-            PBButton.Visibility = Visibility.Visible;
-            btnYeuCauGD.Visibility = Visibility.Collapsed;
-            btnQLPhongBan.Visibility = Visibility.Collapsed;
+            //btnQLPhongBan.Visibility = Visibility.Collapsed;
         }
 
         public NewMW()
         {
             InitializeComponent();
-            string logintype = BUS.CurrentUser.nhanvien.type;
-            switch (logintype)
+            if (CurrentUser.nhanvien.type == "GD")
             {
-                case "NVCT":
-                    NhanVienLogin();
-                    break;
-                case "QL":
-                    QuanLyLogin();
-                    break;
-                case "GD":
-                    GiamDocLogin();
-                    break;
-
+                GiamDocLogin();
+            }
+            else
+            {
+            string logintype = user_bus.get_lastcv(BUS.CurrentUser.nhanvien.CTChucvuID).ChucvuID;
+                switch (logintype)
+                {
+                    case "NVCT":
+                        NhanVienLogin();
+                        break;
+                    case "QL":
+                        QuanLyLogin();
+                        break;
+                    case "GD":
+                        GiamDocLogin();
+                        break;
+                }
             }
         }
 
@@ -140,8 +148,18 @@ namespace BusinessManagement
         private void btnPhongBan_Click(object sender, RoutedEventArgs e)
         {
             spMain.Children.Clear();
-            DSPhongBan pb = new DSPhongBan();
-            spMain.Children.Add(pb);
+            if (CurrentUser.nhanvien.type=="GD")
+            {
+                DSPhongBan pb = new DSPhongBan();
+                spMain.Children.Add(pb);
+            }
+            else
+
+            {
+                PhongBan pb = new PhongBan();
+                pb.initPhongbanpage(user_bus.getpb(BUS.CurrentUser.nhanvien.PBID));
+                spMain.Children.Add(pb);
+            }
         }
         private void btnThemMatHang_Click(object sender, RoutedEventArgs e)
         {
@@ -164,6 +182,24 @@ namespace BusinessManagement
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             lbTenUser.Content = BUS.CurrentUser.nhanvien.tennv;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            loggingout = true;
+            CurrentUser.nhanvien = null;
+            CurrentUser.user = null;
+            DangNhap dn = new DangNhap();
+            dn.Show();
+            this.Close();
+
+
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (!loggingout)
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }

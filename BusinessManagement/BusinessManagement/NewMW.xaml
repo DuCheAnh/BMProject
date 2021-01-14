@@ -14,6 +14,7 @@
         Title="NewMW" Height="720" Width="1280"
         Background="LightGray"
         WindowStyle="SingleBorderWindow"
+        Closed="Window_Closed"
         Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -108,7 +109,7 @@
                     <Button Background="Transparent" BorderBrush="Gray" BorderThickness="0 0 0 2"
                             Height="55"
                             Click="btnPhongBan_Click"
-                            ToolTip="Phòng ban">
+                            ToolTip="Phòng ban" x:Name="btnPb">
                         <materialDesign:PackIcon Kind="Briefcase" Width="40" Height="40" 
                                                  VerticalAlignment="Center" HorizontalAlignment="Center" 
                                                  Foreground="DarkBlue"
@@ -136,39 +137,7 @@
                             <ColumnDefinition Width="2*"></ColumnDefinition>
                             <ColumnDefinition Width="7*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Button Name="PBButton" Width="auto" Height="auto" Margin="10 0" Padding="3"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Foreground="DarkBlue"
-                                FontWeight="Bold"
-                                HorizontalContentAlignment="Left"
-                                VerticalContentAlignment="Center"
-                                Content="Chọn Phòng Ban..."
-                                FontFamily="Segment"
-                                FontSize="16">
-                            <Button.ContextMenu>
-                                <ContextMenu x:Name="PBContextMenu" PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
-                                    <MenuItem Header="Phòng Kinh Doanh" />
-                                    <MenuItem Header="Phòng Nhân Sự" />
-                                    <MenuItem Header="Phòng Tài Chính" />
-                                </ContextMenu>
-                            </Button.ContextMenu>
-                            <Button.Triggers>
-                                <EventTrigger SourceName="PBButton" RoutedEvent="Button.Click">
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="PBContextMenu" Storyboard.TargetProperty="(ContextMenu.IsOpen)">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <sys:Boolean>True</sys:Boolean>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger>
-                            </Button.Triggers>
-                        </Button>
+                       
                         <Grid Grid.Column="1"></Grid>
                         <Expander Grid.Column="1" ExpandDirection="Left" Background="White" Foreground="DarkBlue" x:Name="epQL">
                             <StackPanel Orientation="Horizontal">
@@ -198,13 +167,7 @@
                         Click="btnAddNV_Click">
                                     <materialDesign:PackIcon Kind="AccountAdd" Width="auto" Height="auto" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
                                 </Button>
-                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
-                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                        Panel.ZIndex="0"
-                        x:Name="btnQLPhongBan"
-                        Click="btnQLPhongBan_Click">
-                                    <materialDesign:PackIcon Kind="Bank" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Button>
+                                
                                 <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
                         Style="{DynamicResource MaterialDesignToolForegroundButton}"
                         Panel.ZIndex="0"
@@ -219,32 +182,10 @@
                         Click="btnQLGioLam_Click">
                                     <materialDesign:PackIcon Kind="Timetable" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </Button>
-                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
-                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                        Panel.ZIndex="0"
-                        x:Name="btnDGKN"
-                        Click="btnDGKN_Click">
-                                    <materialDesign:PackIcon Kind="CalendarText" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Button>
-                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
-                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                        Panel.ZIndex="0"
-                        x:Name="btnTKNV"
-                        Click="btnTKNV_Click">
-                                    <materialDesign:PackIcon Kind="BookOpen" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Button>
-                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
-                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                        Panel.ZIndex="0"
-                        x:Name="btnYeuCauGD">
-                                    <materialDesign:PackIcon Kind="Email" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Button>
-                                <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="auto" Margin="10" Background="LightGray"
-                        Style="{DynamicResource MaterialDesignToolForegroundButton}"
-                        Panel.ZIndex="0"
-                        x:Name="btnXemYeuCau">
-                                    <materialDesign:PackIcon Kind="Mailbox" Width="auto" Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Button>
+                                
+                                
+                                
+                                
                             </StackPanel>
                         </Expander>
                     </Grid>
@@ -257,8 +198,7 @@
                                     >
                                 <Button.ContextMenu>
                                     <ContextMenu x:Name="MainContextMenu" PlacementRectangle="{Binding RelativeSource={RelativeSource Self}}">
-                                        <MenuItem Header="Cá nhân" />
-                                        <MenuItem Header="Đăng xuất" />
+                                        <MenuItem Header="Đăng xuất" Click="MenuItem_Click"/>
                                     </ContextMenu>
                                 </Button.ContextMenu>
 

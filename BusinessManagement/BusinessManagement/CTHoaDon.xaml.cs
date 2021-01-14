@@ -38,7 +38,8 @@ namespace BusinessManagement
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            user_bus.add_newHoadon(cthd_ins.HoadonID, dh_inst.DonhangID, cthd_ins.ngaylap, cthd_ins.ngayxuat, CurrentUser.nhanvien.NVID, dh_inst.KhachhangID);
+            if (user_bus.add_newHoadon(cthd_ins.HoadonID, dh_inst.DonhangID, cthd_ins.ngaylap, cthd_ins.ngayxuat, CurrentUser.nhanvien.NVID, dh_inst.KhachhangID))
+                MessageBox.Show("thêm thành công");
         }
     }
 }

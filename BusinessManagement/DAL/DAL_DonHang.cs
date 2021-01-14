@@ -15,6 +15,7 @@ namespace DAL
             long result = 0;
             while (hhid.Length>i+1)
             {
+                
                 if (hhid[i]=='/')
                 {
                     i++;
@@ -33,6 +34,8 @@ namespace DAL
                 DAL_HangHoa hh_func = new DAL_HangHoa();
                 DAL_CTGiaCa giaca_func = new DAL_CTGiaCa();
                 result += giaca_func.get_CTGiaCa(hh_func.get_HangHoa(subhhid).CTGiacaID).giaca*long.Parse(subsl);
+                subhhid = null;
+                subsl = null;
             }
 
             return result;

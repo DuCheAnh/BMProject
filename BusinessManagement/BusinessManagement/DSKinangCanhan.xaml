@@ -1,0 +1,29 @@
+﻿<Window x:Class="BusinessManagement.DSKinangCanhan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        Title="DSKinangCanhan" Height="450" Width="800">
+    <Grid>
+        <Label Content="Danh sách kĩ năng"></Label>
+        <ListView Margin="0 50 0 0" x:Name="knlistview">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100"
+                                                Header="STT"
+                                    DisplayMemberBinding="{Binding DSKynangID}"/>
+                    <GridViewColumn Width="240"
+                                                Header="Tên kĩ năng"
+                                    DisplayMemberBinding="{Binding tenkynang}"/>
+                    <GridViewColumn Width="150"
+                                                Header="Mức độ"
+                                    DisplayMemberBinding="{Binding mucdo}"/>
+                    <GridViewColumn Width="240" Header="Ngày đánh giá"
+                                    DisplayMemberBinding="{Binding ngaydanhgia}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>

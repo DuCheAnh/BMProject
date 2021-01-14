@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BUS;
+using DTO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-
 namespace BusinessManagement
 {
     /// <summary>
@@ -19,9 +9,34 @@ namespace BusinessManagement
     /// </summary>
     public partial class CTKhachHang : Window
     {
+        BUS_USER user_bus = new BUS_USER();
+        Khachhang kh = new Khachhang();
         public CTKhachHang()
         {
             InitializeComponent();
+        }
+        public void initdata(Khachhang data)
+        {
+            kh = data;
+            this.DataContext = kh;
+            dhlistview.ItemsSource = user_bus.getallDH().Where(dh => dh.KhachhangID == kh.KhachhangID);
+        }
+
+        private void rmbtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (user_bus.remove_KH(kh.KhachhangID))
+                this.Close();
+        }
+
+        private void editbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Khachhang inst = new Khachhang();
+            inst.KhachhangID = lbMaKH.Text;
+            inst.tenkh = lbTenKH.Text;
+            inst.sdt = lbSDT.Text;
+            inst.diachi = lbDiaChi.Text;
+            if (user_bus.update_KH(inst))
+                MessageBox.Show("nice");
         }
     }
 }

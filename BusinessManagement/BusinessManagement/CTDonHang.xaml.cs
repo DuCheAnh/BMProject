@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using BUS;
 using DTO;
-using BUS;
+using System.Windows;
 namespace BusinessManagement
 {
     /// <summary>
@@ -27,8 +15,9 @@ namespace BusinessManagement
         }
         public void initdata(Donhang data)
         {
-            lbMaKH.Content = user_bus.getkh(data.KhachhangID).tenkh;
-            ctdhLV.ItemsSource=user_bus.transferCTDH(data);
+            lbMaKH.Content += user_bus.getkh(data.KhachhangID).tenkh;
+            ctdhLV.ItemsSource = user_bus.transferCTDH(data);
+            lbNgaythang.Content += data.ngaythem;
             lbTongTien.Content = data.trigia;
         }
     }

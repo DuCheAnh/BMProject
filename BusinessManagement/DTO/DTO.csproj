@@ -72,6 +72,7 @@
     <Compile Include="Nhacc.cs" />
     <Compile Include="Nhanvien.cs" />
     <Compile Include="NumberCounter.cs" />
+    <Compile Include="NVPBforDisplay.cs" />
     <Compile Include="PBData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserData.cs" />

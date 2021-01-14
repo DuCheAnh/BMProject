@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusinessManagement"
         mc:Ignorable="d"
-        FontFamily="Tahoma"
+        FontFamily="Roboto"
         FontSize="24"
         Title="Chi Tiết Nhân Viên"
         d:DesignHeight="1000" d:DesignWidth="1000"
@@ -34,7 +34,10 @@
                             <Label Content="Nơi Sinh"  Margin="20 20 0 0"/>
                             <Label Content="Địa Chỉ"  Margin="20 20 0 0"/>
                             <Label Content="Trình độ"  Margin="20 20 0 0"/>
+                            <Label Content="Phòng ban"  Margin="20 20 0 0"/>
+
                         </StackPanel>
+                        
 
 
                     </Grid>
@@ -62,53 +65,31 @@
                             <Label x:Name="lbTrinhDo"
                            Content="TrinhDo"
                            Margin="20 20 0 0"/>
-                            <ListView Width="720" TextElement.FontSize="24">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Width="240"
-                                                Header="Chức Vụ"/>
-                                        <GridViewColumn Width="240"
-                                                Header="Ngày Bắt Đầu"/>
-                                        <GridViewColumn Width="240"
-                                                Header="Ngày Kết Thúc"/>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
+                            <Label x:Name="lbPhongban"
+                           Content="Pb"
+                           Margin="20 20 0 0"/>
                             <Button x:Name="btnDoiChucVu"
                     Width="210" Height="50"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Right" FontSize="15"
                                 Margin="20 20 20 20"
                                     Click="btnDoiChucVu_Click"
                                     Background="DarkBlue" BorderBrush="DarkBlue">
                                 <Label Foreground="White" FontSize="18"  >Đổi Chức Vụ</Label>
                                 
                             </Button>
-                            <Label x:Name="lbPhongBan"
-                           Content="Phòng ban hiện tại"
-                           Margin="20 20 0 0"/>
-                            <ListView Width="720" TextElement.FontSize="24">
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Width="280"
-                                                Header="Kỹ Năng"/>
-                                        <GridViewColumn Width="200"
-                                                Header="Mức Độ"/>
-                                        <GridViewColumn Width="240"
-                                                Header="Ngày Đánh Giá"/>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
-                            <Button x:Name="btnThemHopDong"
-                    Width="210" Height="50"
-                    HorizontalAlignment="Right"
-                                Margin="20 20 20 20" Click="btnThemHopDong_Click"
-                                    Background="DarkBlue" BorderBrush="DarkBlue">
-                                <Label Foreground="White">
-                                    Thêm Hợp Đồng
-                                </Label>
-                                
-                            </Button>
+                           
+                            
                         </StackPanel>
+                        <Button x:Name="btnThemkinang"
+                    Width="210" Height="50"  FontSize="15"
+                    HorizontalAlignment="Right"
+                                Margin="0,523,296,397.4" Click="btnThemkinang_Click"
+                                    Background="DarkBlue" BorderBrush="DarkBlue">
+                            <Label Foreground="White">
+                                Thêm kĩ năng
+                            </Label>
+
+                        </Button>
                     </Grid>
                 </Grid>
             </ScrollViewer>

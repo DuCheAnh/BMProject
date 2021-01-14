@@ -22,7 +22,7 @@
                         <GridView >
                             <GridViewColumn Width="170"
                                             Header="Mã nhân viên"
-                                            DisplayMemberBinding="{Binding NVID}">
+                                            DisplayMemberBinding="{Binding manv}">
                             </GridViewColumn>
                             <GridViewColumn Width="200"
                                             Header="Tên nhân viên"
@@ -30,11 +30,11 @@
                             </GridViewColumn>
                             <GridViewColumn Width="170"
                                             Header="Chức vụ"
-                                            DisplayMemberBinding="{Binding type}">
+                                            DisplayMemberBinding="{Binding chucvu}">
                             </GridViewColumn>
                             <GridViewColumn Width="200"
-                                            Header="Số giờ làm"
-                                            DisplayMemberBinding="{Binding}">
+                                            Header="Lương nhân viên"
+                                            DisplayMemberBinding="{Binding luongnv}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button x:Name="btnView" Click="btnView_Click"></Button>

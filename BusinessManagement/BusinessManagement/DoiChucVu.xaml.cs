@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BUS;
+using DTO;
 namespace BusinessManagement
 {
     /// <summary>
@@ -19,9 +20,20 @@ namespace BusinessManagement
     /// </summary>
     public partial class DoiChucVu : Window
     {
+        BUS_USER user_bus = new BUS_USER();
+        Nhanvien nv = new Nhanvien();
         public DoiChucVu()
         {
             InitializeComponent();
+        }
+
+        public void init_data(Nhanvien data)
+        {
+            nv = data;
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            user_bus.update_chucvuNV(nv,chucvucbbox.Text);
         }
     }
 }

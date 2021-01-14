@@ -57,7 +57,7 @@
         </Canvas>
         <Grid Grid.Row="1" Margin="20 20 20 20">
             <ScrollViewer>
-                <ListView TextElement.FontSize="16" x:Name="Hoadonlistview">
+                <ListView MouseDoubleClick="Hoadonlistview_MouseDoubleClick" TextElement.FontSize="16" x:Name="Hoadonlistview">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Width="120"

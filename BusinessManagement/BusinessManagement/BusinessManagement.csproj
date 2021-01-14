@@ -77,6 +77,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addPB.xaml.cs">
+      <DependentUpon>addPB.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CapnhatLamthem.xaml.cs">
       <DependentUpon>CapnhatLamthem.xaml</DependentUpon>
     </Compile>
@@ -92,11 +95,20 @@
     <Compile Include="DoiChucVu.xaml.cs">
       <DependentUpon>DoiChucVu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DSChucvuCanhan.xaml.cs">
+      <DependentUpon>DSChucvuCanhan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DSKinangCanhan.xaml.cs">
+      <DependentUpon>DSKinangCanhan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DSPhongBan.xaml.cs">
       <DependentUpon>DSPhongBan.xaml</DependentUpon>
     </Compile>
     <Compile Include="LichDGKN.xaml.cs">
       <DependentUpon>LichDGKN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Luongdutinh.xaml.cs">
+      <DependentUpon>Luongdutinh.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewMW.xaml.cs">
       <DependentUpon>NewMW.xaml</DependentUpon>
@@ -143,12 +155,19 @@
     <Compile Include="ThongQuaYC.xaml.cs">
       <DependentUpon>ThongQuaYC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TThoadon.xaml.cs">
+      <DependentUpon>TThoadon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="XetKyNang.xaml.cs">
       <DependentUpon>XetKyNang.xaml</DependentUpon>
     </Compile>
     <Compile Include="YeuCauGD.xaml.cs">
       <DependentUpon>YeuCauGD.xaml</DependentUpon>
     </Compile>
+    <Page Include="addPB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CaNhan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -193,6 +212,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DSChucvuCanhan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DSKinangCanhan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DSPhongBan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +239,10 @@
     <Page Include="LichDGKN.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Luongdutinh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -311,6 +342,10 @@
     <Page Include="ThongQuaYC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TThoadon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="XetKyNang.xaml">
       <SubType>Designer</SubType>

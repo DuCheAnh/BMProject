@@ -1,0 +1,32 @@
+﻿<Window x:Class="BusinessManagement.Luongdutinh"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BusinessManagement"
+        mc:Ignorable="d"
+        FontSize="20"
+        FontFamily="Roboto"
+        Title="Luongdutinh" Height="350" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Label Content="Lương thỏa thuận:" Margin="10"></Label>
+            <Label Content="Lương làm thêm: " Margin="10"/>
+            <Label Content="Lương thưởng: " Margin="10"/>
+            <Label Content="Lương chức vụ: " Margin="10"/>
+            <Label Content="Tổng" FontWeight="Bold" Margin="10"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label x:Name="LTTlb" Content="Lương thỏa thuận:" Margin="10">
+                </Label>
+                <Label x:Name="LLTlb" Content="Lương làm thêm: " Margin="10"/>
+                <Label x:Name="LTlb" Content="Lương thưởng: " Margin="10"/>
+                <Label x:Name="LCVlb" Content="Lương chức vụ: " Margin="10"/>
+            <Label x:Name="Tonglb" FontWeight="bold" Content="Tổng" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

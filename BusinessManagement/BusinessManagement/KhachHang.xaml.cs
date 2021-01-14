@@ -46,5 +46,15 @@ namespace BusinessManagement
                 listview_filter(ListViewSearchBar.Text);
             }
         }
+
+        private void KHListview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (KHListview.SelectedItems.Count==1)
+            {
+                CTKhachHang inst = new CTKhachHang();
+                inst.initdata((Khachhang)KHListview.SelectedItems[0]);
+                inst.Show();
+            }
+        }
     }
 }

@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using BUS;
 using DTO;
-using BUS;
+using System.Windows.Controls;
+using System.Windows.Input;
 namespace BusinessManagement
 {
     /// <summary>
@@ -26,6 +14,17 @@ namespace BusinessManagement
         {
             InitializeComponent();
             Hoadonlistview.ItemsSource = user_bus.getallHDListforShow();
+        }
+
+        private void Hoadonlistview_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (Hoadonlistview.SelectedItems.Count == 1)
+            {
+                TThoadon inst = new TThoadon();
+                CTHoadonforShow selected = (CTHoadonforShow)Hoadonlistview.SelectedItems[0];
+                inst.initdata(user_bus.gethd(selected.HoadonID));
+                inst.Show();
+            }
         }
     }
 }

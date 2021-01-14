@@ -2,7 +2,6 @@
 using DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 namespace BUS
 {
     public class BUS_USER
@@ -23,6 +22,8 @@ namespace BUS
         DAL_DonHang donhang_func = new DAL_DonHang();
         DAL_HoaDon hoadon_func = new DAL_HoaDon();
         DAL_YTLT lamthem_func = new DAL_YTLT();
+        DAL_MucThuong mucthuong_func = new DAL_MucThuong();
+        DAL_ChucVu chucvu_func = new DAL_ChucVu();
         public UserData get_user_from_id(string nUid)
         {
             DAL_User user_func = new DAL_User();
@@ -44,7 +45,7 @@ namespace BUS
         }
         public bool update_ctlt(CTLamthem data)
         {
-            return ctlt_func.update_CTLT(data.CTLamthemID, data.sogiolamthem,data.thang,data.tennv);
+            return ctlt_func.update_CTLT(data.CTLamthemID, data.sogiolamthem, data.thang, data.tennv);
         }
         public List<CTLamthem> get_allctlt()
         {
@@ -139,7 +140,7 @@ namespace BUS
                 inst.DonhangID = data.DonhangID;
                 inst.HoadonID = data.DonhangID.Replace("DH", "HD");
                 inst.ngaylap = DateTime.Now.ToString();
-                inst.ngayxuat = "null";
+                inst.ngayxuat = data.ngayxuat;
                 inst.tenkh = getkh(data.KhachhangID).tenkh;
                 inst.tennv = CurrentUser.nhanvien.tennv;
                 inst.trigia = 1;
@@ -190,9 +191,17 @@ namespace BUS
             }
             return list;
         }
+        public Mucthuong getmucthuong_fromctt(string sCTThuongID)
+        {
+            return mucthuong_func.get_MucThuong(ctt_func.get_CTThuong(sCTThuongID).MucthuongID);
+        }
         public Donhang getdonhang(string sDHID)
         {
             return donhang_func.get_DonHang(sDHID);
+        }
+        public Chucvu getchucvu(string sCVID)
+        {
+            return chucvu_func.get_CV(sCVID);
         }
         public List<string> getallPB_ID()
         {
@@ -240,6 +249,14 @@ namespace BUS
             }
             return list;
         }
+        public bool update_chucvuNV(Nhanvien nv, string nCVID)
+        {
+            CTChucVu inst = ctcv_func.get_CTCV(nv.CTChucvuID);
+            inst.ChucvuID += nCVID + "/";
+            inst.NgayUpdate += DateTime.Now.ToString() + "-";
+            return ctcv_func.update_CTCV(inst.CTChucvuID, inst.ChucvuID, inst.NgayUpdate);
+
+        }
         public List<Khachhang> getallKH()
         {
             return khachHang_func.getall_KhachHang();
@@ -257,8 +274,28 @@ namespace BUS
         {
             return pb_func.getall_PB();
         }
+        public CTKyket getkyket(string sCTKyketID)
+        {
+            return kyket_func.get_CTKyKet(sCTKyketID);
+        }
+        public CTLamthem getctlamthem(string sCTLamthemID)
+        {
+            return ctlt_func.get_CTLT(sCTLamthemID);
+        }
+        public CTChucVu getctcv(string sCTChucvuID)
+        {
+            return ctcv_func.get_CTCV(sCTChucvuID);
+        }
+        public DSKynang get_dskn(string sDSKNID)
+        {
+            return dskynang_func.get_DSKyNang(sDSKNID);
+        }
+        public bool update_dskn(DSKynang data)
+        {
+            return dskynang_func.update_DSKyNang(data.DSKynangID, data.tenkynang, data.mucdo, data.ngaydanhgia);
+        }
         public bool add_new_nv(string sName, string sNVID, string sUsername, string sPassword, string sDOB, string sGioitinh
-           , string sNoisinh, string sDiachi, string sCVtype, string sHopDongID, string sTGKyket, string sTrinhdo, string sPBID, string sEmail,string sLTT)
+           , string sNoisinh, string sDiachi, string sCVtype, string sHopDongID, string sTGKyket, string sTrinhdo, string sPBID, string sEmail, string sLTT)
         {
             foreach (Nhanvien data in nhanvien_func.getall_NV())
             {
@@ -272,7 +309,7 @@ namespace BUS
             string nCTCVID = "CTCV" + uid;
             string dtnow = null;
             dtnow = DateTime.Now.ToString();
-            ctcv_func.add_CTCV(nCTCVID, sCVtype, dtnow);
+            ctcv_func.add_CTCV(nCTCVID, sCVtype + "/", dtnow + "-");
             //them chi tiet lam them thang nay
             string nCTLamthemID = "CTLT" + uid;
             int thismonth = DateTime.Now.Month;
@@ -286,7 +323,7 @@ namespace BUS
             //them chi tiet ky ket hop dong
             string nKyketID = "Kyket" + uid;
             Hopdong hopdong_inst = hopdong_func.get_HopDong(sHopDongID);
-            long luongkyket =long.Parse(sLTT);
+            long luongkyket = long.Parse(sLTT);
             string ngaybd = null;
             string ngaykt = null;
             ngaybd = DateTime.Now.ToString();
@@ -294,14 +331,25 @@ namespace BUS
             kyket_func.add_CTKyKet(nKyketID, sHopDongID, luongkyket, ngaybd, ngaykt);
             //them ds ky nang moi
             string nDSKynangID = "DSKN" + uid;
-            string tenkn = "none";
-            string mucdo = "none";
-            string ngaydanhgia = "none";
+            string tenkn = "/";
+            string mucdo = "/";
+            string ngaydanhgia = "-";
             dskynang_func.add_DSKyNang(nDSKynangID, tenkn, mucdo, ngaydanhgia);
             //them nhan vien vao DB
+            PBData phongban = pb_func.get_PB(sPBID);
+            phongban.NVID += sNVID + "/";
+            pb_func.update_PB(phongban.PBID, phongban.tenpb, phongban.sdt, phongban.email, phongban.QLID, phongban.NVID);
             nhanvien_func.add_NV(sNVID, sCVtype, sName, sEmail, sDOB, sGioitinh, sNoisinh, sDiachi, sTrinhdo, sPBID, nCTCVID, nCTLamthemID, nCTThuongID,
                 nKyketID, nDSKynangID);
             return true;
+        }
+        public bool update_hoadon(Hoadon data)
+        {
+            return hoadon_func.update_HoaDon(data.HoadonID, data.DonhangID, data.ngaylap, data.ngayxuat, data.NhanvienID, data.KhachhangID);
+        }
+        public Hoadon gethd(string HoadonId)
+        {
+            return hoadon_func.get_HoaDon(HoadonId);
         }
         public bool add_new_NCC(string sName, string sID, string sSDT)
         {
@@ -318,7 +366,30 @@ namespace BUS
             khachHang_func.add_KhachHang(KHID, sName, sSDT, sDiacChi);
             return true;
         }
+        public Chucvu get_lastcv(string sCTCVID)
+        {
 
+            CTChucVu inst = ctcv_func.get_CTCV(sCTCVID);
+            Chucvu cv = new Chucvu();
+            string subcv = null;
+            int i = 0;
+            while (inst.ChucvuID.Length > i + 1)
+            {
+                if (inst.ChucvuID[i] == '/')
+                {
+                    i++;
+                }
+                while (inst.ChucvuID[i] != '/')
+                {
+                    subcv += inst.ChucvuID[i];
+                    i++;
+                }
+                cv = chucvu_func.get_CV(subcv);
+                subcv = null;
+            }
+            return cv;
+
+        }
         public bool add_new_HH(string sMahang, string sName, string sNCC, string sDVT, string sNhomMN, long sGia)
         {
             string sIDDT = DateTime.Now.Ticks.ToString();
@@ -354,5 +425,18 @@ namespace BUS
             DAL_User user_func = new DAL_User();
             return user_func.search_user(nTaikhoan);
         }
+        public bool remove_KH(string sKhachhangID)
+        {
+            return khachHang_func.remove_KhachHang(sKhachhangID);
+        }
+        public bool update_KH(Khachhang kh)
+        {
+            return khachHang_func.update_KhachHang(kh.KhachhangID, kh.tenkh, kh.sdt, kh.diachi);
+        }
+        public bool add_new_PB(string nPBID, string nTenpb, string nSdt, string nEmail, string nQLID, string nNVID)
+        {
+            return pb_func.add_PB(nPBID, nTenpb, nSdt, nEmail, nQLID, nNVID);
+        }
+
     }
 }

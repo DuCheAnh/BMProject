@@ -36,7 +36,8 @@ namespace BusinessManagement
                 mh_string += mh.getMaMH() + "/";
                 sl_string += mh.getSL() + "/";
             }
-            user_bus.add_new_dh("DH"+user_bus.new_DonhangID().ToString(), mh_string, DateTime.Now.ToString(), sl_string, MaKH.Text);
+            if (user_bus.add_new_dh("DH" + user_bus.new_DonhangID().ToString(), mh_string, DateTime.Now.ToString(), sl_string, MaKH.Text))
+                MessageBox.Show("Thêm thành công");
         }
     }
 }

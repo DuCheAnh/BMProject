@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace BusinessManagement
 {
     /// <summary>
-    /// Interaction logic for TinhLuong.xaml
+    /// Interaction logic for addPB.xaml
     /// </summary>
-    public partial class TinhLuong : Window
+    public partial class addPB : Window
     {
-        public TinhLuong()
+        public addPB()
         {
             InitializeComponent();
         }

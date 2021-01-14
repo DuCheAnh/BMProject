@@ -10,15 +10,16 @@
         Title="Thay đổi chức vụ nhân viên" Height="130" Width="380">
     <Grid>
         <Canvas>
-            <ComboBox Canvas.Left="20" Canvas.Top="20"
+            <ComboBox   x:Name="chucvucbbox" Canvas.Left="20" Canvas.Top="20"
                       materialDesign:HintAssist.Hint="Chức vụ"
                       FontSize="18" FontWeight="Bold"
                       Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                       Width="180">
-                <ComboBoxItem Content="Quản lý"/>
-                <ComboBoxItem Content="Nhân Viên"/>
+                <ComboBoxItem Content="QL"/>
+                <ComboBoxItem Content="NVCT"/>
+                <ComboBoxItem Content="TTS"/>
             </ComboBox>
-            <Button Canvas.Top="40" Canvas.Right="10" Width="120" Background="DarkBlue" BorderBrush="DarkBlue">
+            <Button Canvas.Top="40" Canvas.Right="10" Width="120" Background="DarkBlue" BorderBrush="DarkBlue" Click="Button_Click">
                 <Label FontFamily="segment" Foreground="White">Đồng ý</Label>
             </Button>
         </Canvas>

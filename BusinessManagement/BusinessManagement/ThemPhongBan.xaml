@@ -35,10 +35,20 @@
                      PreviewKeyDown="tbSDTPB_PreviewKeyDown"
                      PreviewTextInput="tbSDTPB_PreviewTextInput"
                      />
+            <TextBox x:Name="tbemailPB" Width="280" Height="50"
+                     Canvas.Left="30" Canvas.Top="220"
+                     materialDesign:HintAssist.Hint="Email"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                     materialDesign:HintAssist.FloatingScale="0.50"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     FontSize="18" FontWeight="Bold" 
+                     PreviewKeyDown="tbSDTPB_PreviewKeyDown"
+                     PreviewTextInput="tbSDTPB_PreviewTextInput"
+                     />
             <Button x:Name="btnThemPB" Width="160" Height="50"
                     Canvas.Bottom="20" Canvas.Right="20"
                     Content="Thêm Phòng Ban" FontWeight="Bold" FontSize="15" 
-                    IsEnabled="False"
+                    IsEnabled="true"
                     Click="btnThemPB_Click">
             </Button>
         </Canvas>
